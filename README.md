@@ -1,226 +1,91 @@
 # Hyron AI — Supply-Chain Blast Radius
 
-> **Local-first dependency incident daemon: from package alert to a risk-ranked, evidence-backed action plan.**
->
-> **FUSION 2026 · CSB-03 · Team: Daemon X**
+> **FUSION 2026 · Problem CSB-03 · Team: Daemon X**
+
+## What It Does in 3 Sentences
+
+Hyron AI is a local-first dependency security daemon that continuously detects known vulnerabilities in resolved software packages and maps their direct and transitive blast radius across projects. It enriches findings with live exploit evidence from OSV.dev, FIRST EPSS, and CISA KEV to rank real-world risk rather than relying on raw severity scores. Finally, it generates an ordered, semver-aware remediation plan categorized into safety tiers alongside factual, evidence-backed incident briefs.
 
 ---
 
-## What It Does
+## Quick Start (Fish Shell)
 
-Modern applications depend on hundreds of open-source packages. When one is found vulnerable, traditional scanners flag it project-by-project — they don't show the **cross-project blast radius**.
+Run these 3 commands in your Fish shell:
 
-Hyron AI:
-
-1. **Watches** lockfiles on a schedule, on change, or when a new advisory is received.
-2. **Maps** direct + transitive dependency paths in a NetworkX graph.
-3. **Ranks** findings with OSV advisory data, FIRST EPSS exploit probability, and CISA KEV (known-exploited) signals.
-4. **Acts** safely: generates an ordered patch plan, classifies each fix into `AUTO / REVIEW / ESCALATE`, and produces an evidence-backed incident brief.
-
-Source code stays local. Public lookups use only package name + version. A disk cache enables offline/demo-day operation.
+```fish
+source .venv/bin/activate.fish; pip install -r backend/requirements.txt
+env OFFLINE=1 python -m backend.main corpus/*/package-lock.json
+uvicorn backend.main:app --port 8000
+```
+Open **http://localhost:8000** to view the interactive dashboard.
 
 ---
 
-## Quick Start
+## How It Works in 5 Minutes (Following a Real Finding)
 
-### 1. Backend setup
+To see the 9-stage pipeline in action, follow one real finding from our scan of `corpus/app-01`: **`ejs@3.0.1`**.
 
-```bash
-cd Fusion2K26
-python -m venv .venv && source .venv/bin/activate
-pip install -r backend/requirements.txt
-```
-
-### 2. Generate the sample corpus (needs npm on PATH)
-
-```bash
-python -m backend.make_corpus 25   # creates corpus/app-01…app-25 with real lockfiles
-```
-
-### 3. Run the pipeline (online)
-
-```bash
-python -m backend.main corpus/*/package-lock.json
-# → writes findings.json, patch_plan.json, .osv_cache.json
-```
-
-### 4. Start the API server
-
-```bash
-uvicorn backend.main:app --reload --port 8000
-# → http://localhost:8000
-```
-
-### 5. Frontend (React + Vite)
-
-```bash
-cd frontend
-npm install
-npm run dev      # → http://localhost:5173 (proxies /api → :8000)
-# OR build for production:
-npm run build    # → frontend/dist/ (served by FastAPI at /)
-```
-
-### 6. Demo-day offline mode
-
-After one online run, use the local cache:
-
-```bash
-OFFLINE=1 python -m backend.main corpus/*/package-lock.json
-OFFLINE=1 uvicorn backend.main:app --port 8000
-```
-
-### 7. Background daemon
-
-```bash
-python -m backend.daemon --corpus corpus --interval 300
-```
+1. **Watch**: The background daemon monitors lockfiles for modifications or checks on schedule.
+2. **Parse**: `manifest_parser.py` parses `corpus/app-01/package-lock.json` using npm's nearest-`node_modules` algorithm and finds `ejs@3.0.1`.
+3. **Graph**: `dependency_graph.py` builds the directed graph edge: `app-01` $\rightarrow$ `ejs@3.0.1` (`depth = 1`, direct production dependency).
+4. **Scan**: `vulnerability_scanner.py` queries OSV.dev and finds advisory `GHSA-phwq-j96m-2c2q` (`CVE-2022-29078`: *"ejs template injection vulnerability"*).
+5. **Enrich**: Exploit feeds provide CVSS **`9.8`**, EPSS **`0.32808`** (32.8% 30-day exploit likelihood), and CISA KEV **`false`**.
+6. **Score**: `risk_engine.py` applies the transparent heuristic:
+   $$\text{Risk} = 100 \times \left(\frac{9.8}{10}\right) \times (0.2 + 0.8 \times 0.32808) \times 1.0 = \mathbf{45.3}$$
+7. **Plan**: `patch_planner.py` extracts published fixes (`3.1.7`) and selects `3.1.7` (smallest safe fix above current, preserving major version 3).
+8. **Verify**: Temporary-copy re-scan validates that updating to `3.1.7` eliminates the CVE without introducing new known flaws.
+9. **Gate**: Classified as **`REVIEW`** (risk score $\ge 30$; requires engineer approval before applying to production).
+   - Generates deterministic incident brief: *"INCIDENT: CVE-2022-29078 affects ejs@3.0.1 in project 'app-01' via ejs@3.0.1. Evidence: CVSS 9.8, EPSS 0.328, CISA KEV No..."*
 
 ---
 
-## API Endpoints
+## Risk Score: Worked Examples
 
-| Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/` | Dashboard (React build or fallback HTML) |
-| `GET` | `/api/summary` | High-level scan summary |
-| `GET` | `/api/blast?q=CVE-XXXX` | Blast radius for one CVE / OSV id |
-| `GET` | `/api/top?n=25` | Top N findings by risk score |
-| `GET` | `/api/projects` | Per-project finding counts |
-| `GET` | `/api/patch?project=&n=30` | Ordered patch plan with tiers |
-| `GET` | `/api/brief?cve=&project=` | Evidence-backed incident brief |
-| `GET` | `/api/brief/top` | Brief for highest-risk finding |
-| `POST`| `/api/scan` | Trigger pipeline from the UI |
-| `GET` | `/docs` | Interactive FastAPI documentation |
+The risk engine computes a transparent prototype score (0–100) using:
+$$\text{exploit\_signal} = 1.0 \text{ if in CISA KEV, else EPSS probability}$$
+$$\text{runtime\_factor} = 0.4 \text{ if dev-only, else } 1.0$$
+$$\text{Risk} = 100 \times \left(\frac{\text{CVSS}}{10}\right) \times (0.2 + 0.8 \times \text{exploit\_signal}) \times \text{runtime\_factor}$$
 
----
+### Example 1: Critical Production Vulnerability Exploited in the Wild
+- **Inputs**: CVSS = 9.8, In CISA KEV = Yes (exploit = 1.0), Production dependency (factor = 1.0)
+- **Calculation**: $100 \times (9.8 / 10) \times (0.2 + 0.8 \times 1.0) \times 1.0 = 98 \times 1.0 = \mathbf{98.0}$
 
-## Risk Score Formula
+### Example 2: High Severity Dev-Only Dependency with Low Exploit Likelihood
+- **Inputs**: CVSS = 7.5, EPSS = 0.10, In CISA KEV = No, Dev-only dependency (factor = 0.4)
+- **Calculation**: $100 \times (7.5 / 10) \times (0.2 + 0.8 \times 0.10) \times 0.4 = 75 \times 0.28 \times 0.4 = \mathbf{8.4}$
 
-```
-exploit_signal = 1.0 if CVE is in CISA KEV else EPSS probability
-runtime_factor = 0.4 for dev-only dependencies, otherwise 1.0
-risk = 100 × (CVSS / 10) × (0.2 + 0.8 × exploit_signal) × runtime_factor
-```
-
-This is a **transparent prototype heuristic, not a security standard.**
-CVSS, EPSS, KEV flag, and dev/prod proxy are always shown beside the score.
+Every score displays the underlying CVSS, EPSS, KEV, and dev/prod proxy directly beside it so engineers can inspect the evidence.
 
 ---
 
-## Action Tiers
+## Glossary
 
-| Tier | Condition | What happens |
-|------|-----------|--------------|
-| `AUTO` | Low risk, same-major fix | Temp-copy re-scan queued (human still approves) |
-| `REVIEW` | Fix available but needs override | Proposed fix shown; human must apply |
-| `ESCALATE` | No fix, major jump, or malicious | Incident brief only; no auto-change |
-
-A clean re-scan is NOT proof that functional tests pass. Hyron AI never deploys to production.
-
----
-
-## Project Structure
-
-```
-Fusion2K26/
-├── backend/
-│   ├── main.py               # FastAPI app + pipeline entry point
-│   ├── daemon.py             # Background file-watcher + scheduler
-│   ├── triage.py             # CVE grouping + tier assignment
-│   ├── make_corpus.py        # Sample npm corpus generator
-│   ├── requirements.txt
-│   ├── .env
-│   ├── routes/
-│   │   ├── scan.py           # POST /api/scan
-│   │   ├── graph.py          # GET /api/summary, /blast, /top, /projects
-│   │   └── reports.py        # GET /api/patch, /brief
-│   ├── services/
-│   │   ├── manifest_parser.py       # lockfile → NetworkX graph
-│   │   ├── vulnerability_scanner.py # OSV + EPSS + KEV lookups
-│   │   ├── risk_engine.py           # risk formula + tier logic
-│   │   ├── patch_planner.py         # semver-aware patch plan
-│   │   ├── dependency_graph.py      # graph utils + Cytoscape serialiser
-│   │   └── ai_explainer.py          # incident brief generator
-│   └── schemas/
-│       └── scan_result.py    # Pydantic models
-├── frontend/
-│   ├── package.json
-│   ├── vite.config.js
-│   ├── index.html
-│   └── src/
-│       ├── App.jsx
-│       ├── api.js            # fetch wrapper for all endpoints
-│       ├── index.css
-│       ├── pages/
-│       │   └── Dashboard.jsx # main dashboard page
-│       └── components/
-│           ├── SummaryCards.jsx
-│           ├── UploadPanel.jsx
-│           ├── RiskTable.jsx
-│           ├── DependencyGraph.jsx  # Cytoscape.js graph
-│           └── PatchPlan.jsx
-├── sample_data/              # example inputs (npm, pip, maven)
-├── tests/
-│   ├── test_parser.py        # manifest parser unit tests
-│   ├── test_scanner.py       # risk engine unit tests
-│   └── test_graph.py         # patch planner unit tests
-├── .gitignore
-└── README.md
-```
+- **Lockfile**: A file (`package-lock.json`) recording the exact versions and dependency tree resolved by a package manager.
+- **Direct vs. Transitive**: A *direct* dependency is declared explicitly in `package.json`; a *transitive* dependency is brought in by another dependency down the tree.
+- **CVE**: Common Vulnerabilities and Exposures — standard dictionary identifier for known security flaws (e.g., `CVE-2022-29078`).
+- **GHSA**: GitHub Security Advisory — advisory database identifier tracked in OSV.dev (e.g., `GHSA-phwq-j96m-2c2q`).
+- **CVSS**: Common Vulnerability Scoring System (0.0 to 10.0) measuring technical severity.
+- **EPSS**: Exploit Prediction Scoring System — probability (0.0 to 1.0) that a CVE will be exploited in the wild within 30 days.
+- **CISA KEV**: CISA Known Exploited Vulnerabilities catalog — definitive list of flaws confirmed to be actively weaponized by adversaries.
+- **Blast Radius**: The full set of projects, applications, and dependency paths reached by a given vulnerable package.
+- **AUTO**: Low-risk candidate that satisfies semver constraints; eligible for automated temp-copy validation.
+- **REVIEW**: Fixed version exists, but applying it requires changing parent constraints or adding lockfile overrides.
+- **ESCALATE**: Requires human decision because of a major version bump, no published fix, or suspected malicious package.
 
 ---
 
-## Tech Stack
+## Troubleshooting
 
-| Layer | Tech | Why |
-|-------|------|-----|
-| Backend | Python · FastAPI | Graph/data problem; no GPU needed. FastAPI gives validated REST + `/docs`. |
-| Graph | NetworkX | Directed graph for direct/transitive path tracing and blast radius. |
-| Vuln data | OSV.dev | Advisories, affected ranges, fixed versions. |
-| Exploit signals | FIRST EPSS · CISA KEV | Exploit probability and known-exploitation evidence. |
-| Frontend | React · Cytoscape.js | Interactive dependency graph + dashboard. |
-| Daemon | watchdog | Cross-platform file-system events for lockfile change detection. |
-| Cache | Disk JSON | Offline/demo-day operation; last-updated time shown. |
+- **Offline Cache Miss**: If you see `"offline: no cached detail"` or empty findings under `env OFFLINE=1`, run one online scan first (`python -m backend.main corpus/*/package-lock.json`) to seed `.osv_cache.json`.
+- **Lockfile Version 1 Error**: If an error states `lockfileVersion 1 unsupported`, regenerate the lockfile with modern npm format: `npm install --package-lock-only`.
+- **Port 8000 in Use**: If Uvicorn reports port 8000 is occupied, run on another port: `uvicorn backend.main:app --port 8080`.
 
 ---
 
-## Dataset & Reference: OSV.dev
+## Honest Limitations
 
-Hyron AI uses **[OSV.dev](https://osv.dev/)** (Open Source Vulnerabilities database by Google and the OpenSSF) as its primary dataset and vulnerability intelligence reference.
-
-- **Batch Vulnerability Detection**: Queries `POST https://api.osv.dev/v1/querybatch` with resolved `(package, version)` tuples from dependency lockfiles.
-- **Advisory Details**: Queries `GET https://api.osv.dev/v1/vulns/{id}` to extract:
-  - Aliases (CVE, GHSA)
-  - CVSS v3 severity vectors and database-specific severities
-  - Affected semver version ranges and exact `fixed` version events
-  - Advisory summaries and descriptions
-- **Canonical Portal Links**: Findings link directly to `https://osv.dev/vulnerability/{id}` in the dashboard for instant engineer inspection.
-- **Offline Resilience & Caching**: All OSV records are cached locally in `.osv_cache.json` ensuring demo-day reliability even without internet connectivity (`OFFLINE=1`).
-
----
-
-## Limitations (Honest)
-
-- **npm only** in this MVP. PyPI (pip) and Maven (pom.xml) need ecosystem-specific resolvers.
-- "Affected" means the vulnerable version is present in the resolved tree — not that the vulnerable code path is reachable.
-- Risk score is a configurable heuristic. Show it as evidence, not as a guarantee.
-- Corpus is **generated**. Lockfiles, dependency trees, and CVE data are real when fetched live.
-- A clean re-scan does not confirm that functional tests pass.
-
----
-
-## Demo Checklist
-
-1. Run one online scan to populate `.osv_cache.json`; then test `OFFLINE=1`.
-2. Start FastAPI, verify `/`, `/api/summary`, `/api/blast`, `/api/top`, `/api/patch`.
-3. Show one real finding and its dependency path; state whether the corpus is synthetic.
-4. Show the highest-priority findings and the evidence that makes them urgent.
-5. Show patch targets and state explicitly: "target version ≠ verified production-safe change."
-6. Do NOT claim the solution passed tests unless you actually ran them.
-
----
-
-## Credits
-
-OSV.dev · FIRST.org EPSS · CISA KEV · NetworkX · cvss · FastAPI · Cytoscape.js · React · Vite
+- **npm lockfiles only**: The current MVP parses npm `package-lock.json` (v2/v3). PyPI and Maven require separate ecosystem resolvers and remain on the future roadmap.
+- **Presence $\neq$ Reachability**: "Affected" means the vulnerable package version exists in the dependency tree. It does **not** prove that the vulnerable function or code path is executed at runtime.
+- **Verified $\neq$ Tests Passed**: "Verified" means the updated package was re-scanned in a temporary copy and confirmed clean. It does **not** mean your application's functional test suite was run or passed.
+- **Heuristic Risk Model**: The risk score is an explainable prototype prioritization formula, not a validated universal security standard.
+- **Deterministic Briefs**: `ai_explainer.py` uses deterministic Python string templates based strictly on scan facts. It does **not** make calls to external LLMs or invent unverified diagnosis.
