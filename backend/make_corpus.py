@@ -1,26 +1,30 @@
 #!/usr/bin/env python3
 """
-make_corpus.py — Generate a corpus of npm projects with REAL lockfiles for Hyron AI.
+make_corpus.py — Sample npm Corpus Generator
 
-Each project pins a random mix of older, historically-vulnerable libraries so
-transitive trees and overlapping CVEs are realistic.
-
-IMPORTANT: The project corpus is generated. The lockfiles, dependency trees,
-and CVE advisory data are real when retrieved live from npm and OSV.dev.
-
-Usage:
-  python -m backend.make_corpus 25        # generates corpus/app-01 … app-25
-  python -m backend.make_corpus 5 --seed 42
-
-Requires npm to be on PATH. Run BEFORE the pipeline.
-
-Hyron AI · FUSION 2026 · CSB-03
+What:
+    Generates a reproducible corpus of npm projects with REAL lockfiles (using npm install --package-lock-only).
+    Pins combinations of historically vulnerable package releases to produce deep transitive dependency graphs.
+Why:
+    Allows realistic demonstration of cross-project blast radius and OSV.dev matching.
+    NOTE: The projects and combination of pins are synthetic; the lockfiles, transitive trees,
+    and OSV.dev advisory records are completely genuine.
+Inputs:
+    n (int): Number of projects to create (default: 25).
+    --seed (int): Random seed for reproducible generation (default: 7).
+    --out (str): Destination directory (default: "corpus").
+Outputs:
+    Directory tree containing <out>/app-XX/package.json and package-lock.json.
+Called by:
+    scripts/demo.fish, developer setup
 """
 
 import argparse
 import json
 import random
+import shutil
 import subprocess
+import sys
 from pathlib import Path
 
 # Historically vulnerable npm packages (all are real published releases)
@@ -60,7 +64,7 @@ BIG = ["react-scripts", "webpack", "next", "mongoose", "sequelize"]
 
 
 def generate_project(out_dir: Path, name: str, deps: dict[str, str]) -> bool:
-    """Write package.json and run npm install --package-lock-only."""
+    """Create a package.json and generate a real package-lock.json without downloading binaries."""
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / "package.json").write_text(
         json.dumps(
@@ -87,10 +91,20 @@ def generate_project(out_dir: Path, name: str, deps: dict[str, str]) -> bool:
 
 
 def main(n: int, seed: int = 7, out: str = "corpus") -> None:
+    """Generate N sample npm projects with real lockfiles using the pinned dependency pool."""
+    if not shutil.which("npm"):
+        print(
+            "Error: 'npm' command not found on PATH.\n"
+            "make_corpus requires npm to generate genuine package-lock.json files.\n"
+            "Please install Node.js/npm or use the pre-generated sample corpus.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
     random.seed(seed)
     out_path = Path(out)
     print(f"Generating {n} projects in ./{out}/ (seed={seed})")
-    print("NOTE: corpus is generated; lockfiles and CVE data are real.\n")
+    print("NOTE: project corpus is generated; lockfiles and CVE data are real.\n")
 
     success = 0
     for i in range(1, n + 1):
@@ -103,13 +117,27 @@ def main(n: int, seed: int = 7, out: str = "corpus") -> None:
 
     print(f"\n{success}/{n} projects generated successfully.")
     if success > 0:
-        print(f"Run pipeline: python -m backend.main corpus/*/package-lock.json")
+        print(f"Run pipeline: python -m backend.main {out}/*/package-lock.json")
+
+
+def _parse_cli():
+    """Parse CLI arguments with examples."""
+    parser = argparse.ArgumentParser(
+        prog="python -m backend.make_corpus",
+        description="Hyron AI — Sample npm Project Corpus Generator (FUSION 2026 · CSB-03)",
+        epilog=(
+            "Examples:\n"
+            "  python -m backend.make_corpus 25\n"
+            "  python -m backend.make_corpus 5 --seed 42 --out demo_corpus\n"
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument("n", type=int, nargs="?", default=25, help="Number of projects to generate (default: 25)")
+    parser.add_argument("--seed", type=int, default=7, help="Random seed (default: 7)")
+    parser.add_argument("--out",  default="corpus", help="Output directory path (default: corpus)")
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Generate sample npm corpus for Hyron AI")
-    parser.add_argument("n", type=int, nargs="?", default=25, help="Number of projects to generate")
-    parser.add_argument("--seed", type=int, default=7, help="Random seed (default: 7)")
-    parser.add_argument("--out",  default="corpus", help="Output directory (default: corpus)")
-    args = parser.parse_args()
-    main(args.n, args.seed, args.out)
+    cli_args = _parse_cli()
+    main(cli_args.n, cli_args.seed, cli_args.out)

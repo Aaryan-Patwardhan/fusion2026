@@ -1,31 +1,27 @@
 #!/usr/bin/env python3
 """
-dependency_graph.py — Graph utilities for blast-radius analysis.
+dependency_graph.py — Graph Traversal & Blast Radius Serialization
 
-Wraps NetworkX graph operations needed by the API routes:
-  - Serialize graph to Cytoscape.js-compatible JSON
-  - Find shortest/all paths from a project to a vulnerable package
-  - Extract subgraph for a given CVE blast radius
-
-Hyron AI · FUSION 2026 · CSB-03
+What:
+    Provides graph traversal, blast radius path extraction, and Cytoscape.js JSON serialization.
+Why:
+    Stage 03 (Graph) of the 9-stage pipeline. Converts in-memory NetworkX directed graphs into
+    visualizable tree structures and traces paths from project roots to vulnerable packages.
+Inputs:
+    networkx.DiGraph instance, node strings, source/target pairs.
+Outputs:
+    Cytoscape.js JSON dicts (nodes and edges), lists of path strings, project impact mappings.
+Called by:
+    backend.routes.graph, backend.main, frontend UI requests
 """
 
 from collections import defaultdict
-
+from typing import Optional
 import networkx as nx
 
 
-def to_cytoscape(G: nx.DiGraph, highlight_nodes: set[str] | None = None) -> dict:
-    """
-    Serialize a NetworkX DiGraph to Cytoscape.js elements format.
-
-    Args:
-        G: The dependency graph
-        highlight_nodes: Set of node ids to mark as 'bad' (vulnerable)
-
-    Returns:
-        {"nodes": [...], "edges": [...]} ready for cytoscape()
-    """
+def to_cytoscape(G: nx.DiGraph, highlight_nodes: Optional[set[str]] = None) -> dict:
+    """Serialize a NetworkX DiGraph into Cytoscape.js nodes and edges format."""
     highlight_nodes = highlight_nodes or set()
     nodes = []
     for n, d in G.nodes(data=True):
@@ -52,19 +48,14 @@ def to_cytoscape(G: nx.DiGraph, highlight_nodes: set[str] | None = None) -> dict
 
 
 def blast_subgraph(G: nx.DiGraph, vuln_node: str) -> dict:
-    """
-    Build a minimal subgraph showing all projects that reach `vuln_node`,
-    including the dependency paths. Returns Cytoscape-ready JSON.
-    """
+    """Extract a minimal subgraph showing all projects reaching a vulnerable package node."""
     relevant_nodes: set[str] = {vuln_node}
     project_nodes = [n for n, d in G.nodes(data=True) if d.get("kind") == "project"]
-    paths_found = []
 
     for proj_node in project_nodes:
         try:
             path = nx.shortest_path(G, proj_node, vuln_node)
             relevant_nodes.update(path)
-            paths_found.append(path)
         except (nx.NetworkXNoPath, nx.NodeNotFound):
             pass
 
@@ -73,7 +64,7 @@ def blast_subgraph(G: nx.DiGraph, vuln_node: str) -> dict:
 
 
 def paths_to_node(G: nx.DiGraph, proj_node: str, vuln_node: str) -> list[list[str]]:
-    """Return all simple dependency paths from a project node to a vulnerable node."""
+    """Return all simple dependency paths from a project root to a target package node."""
     try:
         return list(nx.all_simple_paths(G, proj_node, vuln_node, cutoff=10))
     except (nx.NetworkXNoPath, nx.NodeNotFound):
@@ -81,20 +72,19 @@ def paths_to_node(G: nx.DiGraph, proj_node: str, vuln_node: str) -> list[list[st
 
 
 def shortest_path_labels(G: nx.DiGraph, source: str, target: str) -> list[str]:
-    """Return human-readable labels along the shortest path."""
+    """Return human-readable node labels along the shortest path between two nodes."""
     try:
         path = nx.shortest_path(G, source, target)
         return [G.nodes[n].get("label", n) for n in path]
     except (nx.NetworkXNoPath, nx.NodeNotFound):
-        return [G.nodes.get(source, {}).get("label", source),
-                G.nodes.get(target, {}).get("label", target)]
+        return [
+            G.nodes.get(source, {}).get("label", source),
+            G.nodes.get(target, {}).get("label", target),
+        ]
 
 
 def project_impact_map(G: nx.DiGraph, vuln_nodes: list[str]) -> dict[str, list[str]]:
-    """
-    For a list of vulnerable package nodes, return {project_name: [vuln_node, ...]}
-    showing which projects are affected and by which packages.
-    """
+    """Map project names to lists of reachable vulnerable package nodes."""
     impact: dict = defaultdict(list)
     project_nodes = {n: d for n, d in G.nodes(data=True) if d.get("kind") == "project"}
 

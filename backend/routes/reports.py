@@ -1,11 +1,23 @@
 #!/usr/bin/env python3
 """
-routes/reports.py — Patch plan and incident brief endpoints for Hyron AI.
-Hyron AI · FUSION 2026 · CSB-03
+routes/reports.py — Patch Plan & Incident Brief API Routes
+
+What:
+    REST endpoints serving the prioritized remediation plan and deterministic incident briefs.
+Why:
+    Provides developers and security teams with copy-pasteable patch commands, safety tiers,
+    and factual incident briefs without requiring manual advisory synthesis.
+Inputs:
+    GET query parameters (project: str, cve: str, n: int limit).
+Outputs:
+    JSON responses containing patch action lists and structured incident briefs.
+Called by:
+    FastAPI router in backend.main, frontend PatchPlan component, incident brief view
 """
 
 import json
 from pathlib import Path
+from typing import Optional
 
 from fastapi import APIRouter, HTTPException
 
@@ -18,24 +30,28 @@ PATCH_PLAN_FILE = Path("patch_plan.json")
 
 
 def _rows() -> list[dict]:
+    """Read and return finding rows from the persisted findings.json file."""
     if not FINDINGS_FILE.exists():
-        raise HTTPException(status_code=503, detail="findings.json not found. Run the pipeline first.")
+        raise HTTPException(
+            status_code=503,
+            detail="findings.json not found. Run the scan pipeline first.",
+        )
     return json.loads(FINDINGS_FILE.read_text())
 
 
 def _plan() -> list[dict]:
+    """Read and return patch plan rows from the persisted patch_plan.json file."""
     if not PATCH_PLAN_FILE.exists():
-        raise HTTPException(status_code=503, detail="patch_plan.json not found. Run the pipeline first.")
+        raise HTTPException(
+            status_code=503,
+            detail="patch_plan.json not found. Run the scan pipeline first.",
+        )
     return json.loads(PATCH_PLAN_FILE.read_text())
 
 
 @router.get("/patch")
-def patch(project: str | None = None, n: int = 30):
-    """
-    Ordered patch plan (highest risk-removed first).
-    Filter by project name with ?project=<name>.
-    Each entry shows the action tier: AUTO | REVIEW | ESCALATE.
-    """
+def patch(project: Optional[str] = None, n: int = 30) -> list[dict]:
+    """Return the ordered remediation plan, optionally filtered to a specific project."""
     plan = _plan()
     if project:
         plan = [p for p in plan if p["project"] == project]
@@ -43,13 +59,8 @@ def patch(project: str | None = None, n: int = 30):
 
 
 @router.get("/brief")
-def incident_brief(cve: str | None = None, project: str | None = None):
-    """
-    Generate an evidence-backed incident brief.
-    If cve is provided, brief is for the highest-risk finding matching that CVE.
-    If project is also provided, scoped to that project.
-    Otherwise, brief covers the top overall finding.
-    """
+def incident_brief(cve: Optional[str] = None, project: Optional[str] = None) -> dict:
+    """Return a factual, evidence-backed incident brief for a given CVE or top finding."""
     rows = _rows()
     plan = _plan()
 
@@ -82,8 +93,8 @@ def incident_brief(cve: str | None = None, project: str | None = None):
 
 
 @router.get("/brief/top")
-def top_brief():
-    """Incident brief for the single highest-risk finding in the last scan."""
+def top_brief() -> dict:
+    """Return an incident brief for the single highest-risk finding across all projects."""
     rows = _rows()
     plan = _plan()
     return {

@@ -1,14 +1,23 @@
 #!/usr/bin/env python3
 """
-manifest_parser.py — Parses npm package-lock.json (v2/v3) into a per-project
-directed NetworkX dependency graph using npm's nearest-node_modules resolution.
+manifest_parser.py — npm Lockfile Resolver & Graph Builder
 
-Credits: OSV.dev, FIRST.org EPSS, CISA KEV, networkx, cvss, FastAPI, Cytoscape.js
-Hyron AI · FUSION 2026 · CSB-03
+What:
+    Parses npm package-lock.json (versions 2 and 3) into a directed dependency graph.
+Why:
+    Stage 02 (Parse) of the 9-stage pipeline. Lockfiles describe the exact hoisted
+    dependency tree. Building a graph is required to trace paths and blast radius.
+Inputs:
+    Filesystem path(s) to package-lock.json files.
+Outputs:
+    NetworkX DiGraph with project nodes (kind="project") and package nodes (kind="pkg").
+Called by:
+    backend.main.run_pipeline(), tests.test_parser
 """
 
 import json
 from pathlib import Path
+from typing import Optional
 
 import networkx as nx
 
@@ -16,12 +25,18 @@ import networkx as nx
 # ---------- npm resolution helpers ----------
 
 def _parent_scope(path: str) -> str:
-    """Walk one level up in the npm nested node_modules hierarchy."""
+    """Walk one level up in the nested node_modules directory hierarchy."""
     return path.rsplit("/node_modules/", 1)[0] if "/node_modules/" in path else ""
 
 
-def _resolve(pkgs: dict, frm: str, dep: str) -> str | None:
-    """npm resolution: nearest node_modules/<dep> walking up from the requiring package."""
+def _resolve(pkgs: dict, frm: str, dep: str) -> Optional[str]:
+    """
+    Resolve a required dependency to its installed package path in the lockfile.
+
+    Why: npm uses a hoisted nested directory layout. When package A requires
+    dependency B, npm looks in A/node_modules/B first. If not found, it walks up
+    the scope hierarchy until it finds the hoisted copy at root node_modules/B.
+    """
     base = frm
     while True:
         cand = f"{base}/node_modules/{dep}" if base else f"node_modules/{dep}"
@@ -35,15 +50,10 @@ def _resolve(pkgs: dict, frm: str, dep: str) -> str | None:
 # ---------- public API ----------
 
 def load_project(path: str | Path) -> nx.DiGraph:
-    """
-    Parse a single package-lock.json (v2/v3) and return a directed graph where:
-      - project node  kind="project"  label=<folder name>
-      - package nodes kind="pkg"      label=<name@version>
-      - edges represent requires/installs relationships
-    """
+    """Parse one package-lock.json file and return its directed dependency graph."""
     path = Path(path)
     lock = json.loads(path.read_text())
-    proj = path.parent.name  # folder name = project name (must be unique)
+    proj = path.parent.name  # folder name = project identifier
 
     pk = lock.get("packages")
     if not pk:
@@ -76,11 +86,13 @@ def load_project(path: str | Path) -> nx.DiGraph:
             label=f"{name}@{m['version']}",
         )
 
+    # Add edges from project root to directly declared dependencies
     for d in direct:
         t = _resolve(nodes, "", d)
         if t:
             G.add_edge(top, f"{proj}:{t}")
 
+    # Add transitive dependency edges between packages
     for p, m in nodes.items():
         for d in {**m.get("dependencies", {}), **m.get("optionalDependencies", {})}:
             t = _resolve(nodes, p, d)
@@ -91,6 +103,6 @@ def load_project(path: str | Path) -> nx.DiGraph:
 
 
 def load_projects(paths: list[str | Path]) -> nx.DiGraph:
-    """Compose multiple project graphs into one combined graph."""
+    """Compose multiple individual project graphs into one unified dependency graph."""
     graphs = [load_project(p) for p in paths]
     return nx.compose_all(graphs)

@@ -1,25 +1,27 @@
 #!/usr/bin/env python3
 """
-triage.py — Event-triggered triage and decision-tier assignment for Hyron AI.
+triage.py — CVE Aggregation & Decision-Tier Triage Engine
 
-Groups findings by CVE/package/project, computes affected-project lists and paths,
-and decides AUTO / REVIEW / ESCALATE according to the policy defined in the
-VulnGraph AI architecture:
-
-  AUTO:     Low-risk candidate satisfies constraints; temp-copy re-scan queued.
-  REVIEW:   Fix exists but requires override or constraint change.
-  ESCALATE: Major upgrade, no fixed version, malicious package, or ambiguous resolution.
-
-The daemon (daemon.py) calls triage after each scan to produce an incident report.
-
-Hyron AI · FUSION 2026 · CSB-03
+What:
+    Groups findings by CVE/advisory, computes cross-project blast radius, and assigns
+    overall policy recommendations (AUTO, REVIEW, or ESCALATE).
+Why:
+    Stage 09 (Gate) of the 9-stage pipeline. Security teams triage by vulnerability
+    incident across the entire organization, not just one isolated file at a time.
+Inputs:
+    findings (list[dict]): Finding rows from the scan pipeline.
+    patch_plan (list[dict]): Corresponding patch actions from patch_plan.json.
+Outputs:
+    list[dict]: CVE-centric triage summaries with affected projects, blast radius, and recommended actions.
+Called by:
+    backend.daemon, reports, incident review
 """
 
 from collections import defaultdict
 
 
 def group_by_cve(findings: list[dict]) -> dict[str, list[dict]]:
-    """Group findings by CVE/advisory id."""
+    """Group flat finding rows into a mapping keyed by CVE or advisory identifier."""
     out: dict = defaultdict(list)
     for f in findings:
         key = f.get("cve") or f.get("vuln", "UNKNOWN")
@@ -28,7 +30,7 @@ def group_by_cve(findings: list[dict]) -> dict[str, list[dict]]:
 
 
 def group_by_project(findings: list[dict]) -> dict[str, list[dict]]:
-    """Group findings by project name."""
+    """Group flat finding rows into a mapping keyed by project name."""
     out: dict = defaultdict(list)
     for f in findings:
         out[f["project"]].append(f)
@@ -36,18 +38,7 @@ def group_by_project(findings: list[dict]) -> dict[str, list[dict]]:
 
 
 def triage_cve(cve_id: str, findings: list[dict], patch_plan: list[dict]) -> dict:
-    """
-    Build a triage summary for one CVE across all affected projects.
-
-    Returns:
-        {
-          cve, summary, cvss, epss, kev,
-          affected_projects: [ {project, risk, paths, tier, action} ],
-          blast_radius: int,          # number of affected projects
-          max_risk: float,
-          recommended_action: str,    # human-readable overall recommendation
-        }
-    """
+    """Build a comprehensive triage summary for a single CVE across all affected projects."""
     affected = []
     kev      = any(f.get("kev") for f in findings)
     cvss     = max((f.get("cvss", 0) for f in findings), default=0)
@@ -62,7 +53,6 @@ def triage_cve(cve_id: str, findings: list[dict], patch_plan: list[dict]) -> dic
         max_risk = max(f["risk"] for f in proj_findings)
         paths    = [f["path"] for f in proj_findings]
 
-        # Find patch plan entry for this project/CVE
         pkg_names = {f["package"].rsplit("@", 1)[0] for f in proj_findings}
         patch_entries = [
             p for p in patch_plan
@@ -81,7 +71,7 @@ def triage_cve(cve_id: str, findings: list[dict], patch_plan: list[dict]) -> dic
 
     affected.sort(key=lambda x: -x["risk"])
 
-    # Overall recommendation
+    # Determine overall organizational recommendation
     all_tiers = {a["tier"] for a in affected}
     if "ESCALATE" in all_tiers:
         rec = "ESCALATE: Manual review required for one or more affected projects."
@@ -104,11 +94,7 @@ def triage_cve(cve_id: str, findings: list[dict], patch_plan: list[dict]) -> dic
 
 
 def run_triage(findings: list[dict], patch_plan: list[dict]) -> list[dict]:
-    """
-    Run full triage on all findings.
-
-    Returns a list of per-CVE triage summaries, sorted by max_risk descending.
-    """
+    """Execute triage across all findings and return summaries sorted by maximum risk descending."""
     by_cve = group_by_cve(findings)
     results = [
         triage_cve(cve_id, cve_findings, patch_plan)

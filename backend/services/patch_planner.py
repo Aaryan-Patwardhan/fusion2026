@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
 """
-patch_planner.py — Ordered, semver-aware remediation plan for Hyron AI.
+patch_planner.py — Semver-Aware Remediation Planner
 
-For each vulnerable (project, package, version):
-  1. Collect all published fixed versions from the advisory record.
-  2. Prefer smallest safe update; prefer same-major over major jump.
-  3. Treat 0.x minor changes as potentially breaking.
-  4. Classify into AUTO / REVIEW / ESCALATE action tiers.
-  5. Order package actions by risk removed (highest first).
-
-The plan never merges or deploys automatically.
-A clean re-scan is NOT proof that functional tests pass.
-
-Hyron AI · FUSION 2026 · CSB-03
+What:
+    Identifies the smallest safe published fixed version for each vulnerable package,
+    orders remediation actions by total risk removed, and categorizes them into action tiers.
+Why:
+    Stage 07 (Plan) of the 9-stage pipeline. Blindly upgrading to latest often causes
+    breaking changes; selecting the smallest safe version above current minimizes build breakage.
+Inputs:
+    rows (list[dict]): Finding rows output by the scan pipeline.
+Outputs:
+    list[dict]: Ranked remediation plan sorted by risk_removed descending.
+Called by:
+    backend.main.run_pipeline(), backend.routes.reports, tests.test_graph
 """
 
+from typing import Optional
 from packaging.version import InvalidVersion, Version
 
 from backend.services.risk_engine import tier_label
@@ -22,20 +24,21 @@ from backend.services.risk_engine import tier_label
 
 # ---------- helpers ----------
 
-def _v(s: str) -> Version | None:
+def _v(s: str) -> Optional[Version]:
+    """Parse a version string into a comparable packaging.version.Version object or None."""
     try:
         return Version(s)
     except InvalidVersion:
         return None
 
 
-def pick_fix(current: str, fixed: list[str]) -> tuple[str | None, bool]:
+def pick_fix(current: str, fixed: list[str]) -> tuple[Optional[str], bool]:
     """
-    Select the safest published fixed version above `current`.
+    Select the safest published fixed version above the currently installed version.
 
-    Returns:
-        (target_version, is_major_jump)
-        target_version is None if no fix is available above current.
+    Why: In semver, upgrading across a major version boundary (or minor boundary in 0.x)
+    frequently introduces breaking API changes. We prioritize candidate versions within
+    the same major release series, choosing the lowest version that fixes the vulnerability.
     """
     c = _v(current)
     if c is None:
@@ -45,28 +48,18 @@ def pick_fix(current: str, fixed: list[str]) -> tuple[str | None, bool]:
     if not candidates:
         return None, False
 
+    # Prefer same major version to minimize breaking changes
     same_major = [f for f in candidates if _v(f).major == c.major]
     pool = same_major or candidates
     target = min(pool, key=_v)
-    is_major_jump = _v(target).major != c.major  # type: ignore[union-attr]
+    is_major_jump = _v(target).major != c.major
     return target, is_major_jump
 
 
 # ---------- public API ----------
 
 def build_patch_plan(rows: list[dict]) -> list[dict]:
-    """
-    Build an ordered patch plan from scan findings.
-
-    Args:
-        rows: list of finding dicts (output of pipeline scan)
-
-    Returns:
-        Sorted list of patch actions, highest risk-removed first.
-        Each entry contains:
-          order, project, package, current, target, direct,
-          via, risk_removed, vulns, action, tier
-    """
+    """Build an ordered remediation plan from vulnerability scan findings."""
     plan: dict = {}
 
     for r in rows:
@@ -89,7 +82,7 @@ def build_patch_plan(rows: list[dict]) -> list[dict]:
 
         target, major_jump = pick_fix(cur, r["fixed"])
         if target:
-            # Keep the highest target in case multiple vulns need different fixes
+            # If multiple vulns exist for the same package, select the highest fix target
             if entry["target"] is None or _v(target) > _v(entry["target"]):
                 entry["target"] = target
                 entry["is_major_jump"] = major_jump

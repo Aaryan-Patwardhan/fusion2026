@@ -1,53 +1,42 @@
 #!/usr/bin/env python3
 """
-risk_engine.py — Explainable risk scoring for Hyron AI.
+risk_engine.py — Explainable Heuristic Risk Engine & Action Tier Gate
 
-Formula (transparent prototype heuristic — not a security standard):
-  exploit_signal = 1.0 if CVE is in CISA KEV else EPSS probability
-  runtime_factor = 0.4 for dev-only dependencies, otherwise 1.0
-  risk = 100 × (CVSS / 10) × (0.2 + 0.8 × exploit_signal) × runtime_factor
-
-Illustrative examples (from pitch deck):
-  CVSS 9.8 · KEV-listed · production  → ~98
-  CVSS 7.5 · EPSS 0.10 · dev-only     → ~8.4
-
-Show the CVSS, EPSS, KEV membership, and dev/prod proxy beside the score so
-engineers can inspect the evidence. Unknown exposure is labelled "Unknown".
-
-Hyron AI · FUSION 2026 · CSB-03
+What:
+    Calculates explainable risk scores combining CVSS severity with CISA KEV and EPSS signals,
+    and assigns findings to AUTO, REVIEW, or ESCALATE action tiers.
+Why:
+    Stage 06 (Score) and Stage 09 (Gate) of the 9-stage pipeline. Severity alone causes
+    alert fatigue; weighting by active exploitation evidence produces actionable triage.
+Inputs:
+    cvss (float), cve (str | None), is_dev (bool), epss_map (dict), kev (set).
+Outputs:
+    Risk score (float 0–100), tier label ("AUTO" | "REVIEW" | "ESCALATE").
+Called by:
+    backend.main.run_pipeline(), backend.triage, tests.test_scanner
 """
 
+from typing import Optional
 import networkx as nx
 
 
-def compute_risk(cvss: float, cve: str | None, is_dev: bool,
-                 epss_map: dict[str, float], kev: set[str]) -> float:
-    """
-    Compute the Hyron AI risk score (0–100).
-
-    Args:
-        cvss:     CVSS base score (0–10)
-        cve:      CVE identifier or None
-        is_dev:   True if the dependency is dev-only
-        epss_map: {cve_id: epss_probability} mapping
-        kev:      Set of CISA KEV CVE ids
-
-    Returns:
-        Rounded risk score (float, 0–100)
-    """
+def compute_risk(
+    cvss: float,
+    cve: Optional[str],
+    is_dev: bool,
+    epss_map: dict[str, float],
+    kev: set[str],
+) -> float:
+    """Calculate the transparent prototype risk score (0.0 to 100.0) using exploit evidence."""
+    # Exploit signal: KEV takes precedence as confirmed weaponized exploit; otherwise EPSS probability
     exploit_signal = 1.0 if cve in kev else epss_map.get(cve or "", 0.0)
+    # Dev-only proxy: dependencies used only at build/test time carry lower runtime exposure
     runtime_factor = 0.4 if is_dev else 1.0
     return round(100 * (cvss / 10) * (0.2 + 0.8 * exploit_signal) * runtime_factor, 1)
 
 
 def blast_radius(G: nx.DiGraph, vuln_node: str) -> dict:
-    """
-    Compute blast-radius context for a given vulnerable package node.
-
-    Returns a dict with:
-      - affected_projects: list of project names that reach this node
-      - path_count: total number of dependency paths
-    """
+    """Calculate the project-level blast radius and path count for a vulnerable node."""
     affected_projects = []
     path_count = 0
 
@@ -68,18 +57,16 @@ def blast_radius(G: nx.DiGraph, vuln_node: str) -> dict:
     }
 
 
-def tier_label(risk_score: float, target: str | None, major_jump: bool) -> str:
-    """
-    Classify a finding into AUTO / REVIEW / ESCALATE tiers.
-
-    AUTO:     Low-risk, fix available, same-major update.
-    REVIEW:   Fix available but requires override / constraint change.
-    ESCALATE: No fix, major jump, or uncertain resolution.
-    """
+def tier_label(risk_score: float, target: Optional[str], major_jump: bool) -> str:
+    """Classify remediation action into AUTO, REVIEW, or ESCALATE policy tiers."""
+    # If no fix is published, manual mitigation or package replacement is required
     if target is None:
-        return "ESCALATE"   # No fixed version published
+        return "ESCALATE"
+    # Major version jump has high likelihood of breaking API changes
     if major_jump:
-        return "ESCALATE"   # Major version bump — needs human review
+        return "ESCALATE"
+    # Low-risk same-major update qualifies for automated temp-copy validation
     if risk_score < 30:
-        return "AUTO"       # Low risk, safe same-major fix
-    return "REVIEW"         # Moderate/high risk — propose fix, human approves
+        return "AUTO"
+    # Moderate/high risk requires explicit engineer review before applying
+    return "REVIEW"

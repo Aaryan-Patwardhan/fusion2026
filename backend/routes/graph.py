@@ -1,7 +1,19 @@
 #!/usr/bin/env python3
 """
-routes/graph.py — Dependency graph + blast-radius endpoints for Hyron AI.
-Hyron AI · FUSION 2026 · CSB-03
+routes/graph.py — Graph Metrics & Blast Radius Endpoints
+
+What:
+    REST endpoints providing high-level scan summaries, CVE-specific blast radius mapping,
+    top risk findings, and project overviews.
+Why:
+    Powers the primary dashboard views: summary tiles, CVE search blast radius,
+    and the interactive Cytoscape.js dependency path visualizer.
+Inputs:
+    GET query parameters (q: advisory/CVE id, n: integer count limit).
+Outputs:
+    JSON responses with scan statistics, affected projects, paths, and OSV links.
+Called by:
+    FastAPI router in backend.main, frontend dashboard components
 """
 
 import json
@@ -12,25 +24,22 @@ from fastapi import APIRouter, HTTPException
 
 router = APIRouter()
 
-FINDINGS_FILE   = Path("findings.json")
-PATCH_PLAN_FILE = Path("patch_plan.json")
+FINDINGS_FILE = Path("findings.json")
 
 
 def _rows() -> list[dict]:
+    """Read and return finding rows from the persisted findings.json file."""
     if not FINDINGS_FILE.exists():
-        raise HTTPException(status_code=503, detail="findings.json not found. Run the pipeline first.")
+        raise HTTPException(
+            status_code=503,
+            detail="findings.json not found. Run the scan pipeline first.",
+        )
     return json.loads(FINDINGS_FILE.read_text())
 
 
-def _plan() -> list[dict]:
-    if not PATCH_PLAN_FILE.exists():
-        raise HTTPException(status_code=503, detail="patch_plan.json not found. Run the pipeline first.")
-    return json.loads(PATCH_PLAN_FILE.read_text())
-
-
 @router.get("/summary")
-def summary():
-    """High-level scan summary: project count, finding count, KEV hits, direct/transitive split."""
+def summary() -> dict:
+    """Return high-level metrics: project count, findings, KEV hits, and direct/transitive split."""
     r = _rows()
     return dict(
         projects=len({x["project"] for x in r}),
@@ -45,11 +54,8 @@ def summary():
 
 
 @router.get("/blast")
-def blast(q: str):
-    """
-    Blast-radius view for one CVE or OSV advisory id.
-    Returns every project the vulnerability reaches, with dependency paths, risk, and fix.
-    """
+def blast(q: str) -> dict:
+    """Return the cross-project blast radius and dependency paths for a specific CVE or advisory."""
     rows = _rows()
     hit = [x for x in rows if q in (x["cve"], x["vuln"])]
     if not hit:
@@ -84,14 +90,14 @@ def blast(q: str):
 
 
 @router.get("/top")
-def top(n: int = 25):
-    """Top N highest-risk findings across all projects."""
+def top(n: int = 25) -> list[dict]:
+    """Return the top N highest-risk findings across all scanned projects."""
     return _rows()[:n]
 
 
 @router.get("/projects")
-def projects():
-    """List all scanned projects and their finding counts."""
+def projects() -> list[dict]:
+    """Return project summaries showing finding counts, KEV hits, and max risk per project."""
     rows = _rows()
     by_proj: dict = defaultdict(list)
     for r in rows:

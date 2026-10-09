@@ -1,45 +1,41 @@
 #!/usr/bin/env python3
 """
-routes/scan.py — Scan trigger endpoint for Hyron AI.
-POST /api/scan  →  runs the full pipeline on provided lockfile paths.
-Hyron AI · FUSION 2026 · CSB-03
+routes/scan.py — Scan Trigger API Route
+
+What:
+    HTTP POST endpoint to trigger the full 9-stage analysis pipeline on demand.
+Why:
+    Allows frontend clients or CI/CD pipelines to initiate lockfile scans dynamically.
+Inputs:
+    POST /api/scan with JSON { "paths": ["corpus/*/package-lock.json"] }.
+Outputs:
+    JSON response { "status": "ok", "findings": int, "projects": int }.
+Called by:
+    FastAPI router in backend.main, frontend UploadPanel
 """
 
-import json
-from pathlib import Path
-
+import glob
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 router = APIRouter()
 
-FINDINGS_FILE   = Path("findings.json")
-PATCH_PLAN_FILE = Path("patch_plan.json")
-
 
 class ScanRequest(BaseModel):
-    paths: list[str]  # glob patterns or explicit paths to package-lock.json files
+    """Request payload containing lockfile paths or glob patterns to analyze."""
+    paths: list[str]
 
 
 @router.post("/scan")
-def trigger_scan(req: ScanRequest):
-    """
-    Trigger a full pipeline scan on the provided lockfile paths.
-
-    This runs: manifest_parser → OSV lookup → risk scoring → patch plan
-    and writes findings.json + patch_plan.json.
-
-    NOTE: For large corpora this may take 30–90 seconds (network-bound).
-    Use OFFLINE=1 env var to use cached data only.
-    """
-    import glob
+def trigger_scan(req: ScanRequest) -> dict:
+    """Trigger an end-to-end pipeline scan on the requested lockfile paths."""
     from backend.main import run_pipeline
 
     expanded = []
     for pattern in req.paths:
         matched = glob.glob(pattern, recursive=True)
         if not matched:
-            expanded.append(pattern)  # let pipeline raise the error
+            expanded.append(pattern)
         else:
             expanded.extend(matched)
 
