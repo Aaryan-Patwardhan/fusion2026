@@ -12,7 +12,20 @@
 
 function tierPill(tier) {
   const cls = `pill pill-${tier?.toLowerCase()}`;
-  return <span className={cls}>{tier}</span>;
+  let tooltip = '';
+  if (tier === 'AUTO') {
+    tooltip = 'AUTO: Low risk, same-major fix. Automatically validated in temp copy via lockfile re-scan.';
+  } else if (tier === 'REVIEW') {
+    tooltip = 'REVIEW: Fix exists but requires override or constraint change. Requires human approval.';
+  } else if (tier === 'ESCALATE') {
+    tooltip = 'ESCALATE: Major version bump, no published fix, or ambiguous resolution. Manual decision needed.';
+  }
+
+  return (
+    <span className={cls} title={tooltip} style={{ cursor: 'help' }}>
+      {tier}
+    </span>
+  );
 }
 
 export default function PatchPlan({ plan = [], project }) {
@@ -32,9 +45,13 @@ export default function PatchPlan({ plan = [], project }) {
               <th>Project</th>
               <th>Package</th>
               <th>Fix To</th>
-              <th>Risk Removed</th>
-              <th>Tier</th>
-              <th>Action</th>
+              <th title="Total risk points eliminated by applying this upgrade target.">
+                Risk Removed (?)
+              </th>
+              <th title="Policy gate tier: AUTO (safe low-risk), REVIEW (needs approval), or ESCALATE (breaking/no fix).">
+                Tier (?)
+              </th>
+              <th>Action Command</th>
             </tr>
           </thead>
           <tbody>
@@ -60,9 +77,11 @@ export default function PatchPlan({ plan = [], project }) {
               </tr>
             ))}
             {filtered.length === 0 && (
-              <tr><td colSpan={7} style={{ color: 'var(--mut)', textAlign: 'center', padding: 24 }}>
-                No patch plan entries. Run the pipeline first.
-              </td></tr>
+              <tr>
+                <td colSpan={7} style={{ color: 'var(--mut)', textAlign: 'center', padding: 24 }}>
+                  No patch plan entries available. Run the scan pipeline to generate remediation plan.
+                </td>
+              </tr>
             )}
           </tbody>
         </table>

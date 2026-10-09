@@ -63,14 +63,20 @@ async function search(){
   const d=await j('/api/blast?q='+encodeURIComponent(q)).catch(()=>({results:[]}));
   current=d.results||[];
   $('#rt').innerHTML=`${esc(q)}: ${current.length} project(s) affected <a href="https://osv.dev/vulnerability/${encodeURIComponent(q)}" target="_blank" style="float:right;color:var(--acc);font-size:12px;text-decoration:none;text-transform:none">View on OSV.dev ↗</a>`;
-  $('#res tbody').innerHTML='<tr><th>Project</th><th>Risk</th><th>Type</th><th>Via</th><th>Fix</th></tr>'+
-    current.map((r,i)=>`<tr class="hit" data-i="${i}">
+  $('#res tbody').innerHTML='<tr><th>Project</th><th title="Explainable risk score (0–100) combining CVSS severity, EPSS/KEV exploit likelihood, and runtime factor.">Risk (?)</th><th title="Direct (declared in package.json) or Transitive (nested in dependency tree).">Type (?)</th><th>Via</th><th>Fix</th><th>Score Calculation</th></tr>'+
+    current.map((r,i)=>{
+      const exp=r.kev?'1.0 (KEV)':(r.epss?(r.epss).toFixed(3)+' (EPSS)':'0.0');
+      const rt=r.dev?'0.4 (dev)':'1.0 (prod)';
+      const calc=`100 × (${r.cvss||'5.0'}/10) × (0.2 + 0.8×${exp}) × ${rt} = ${r.risk}`;
+      return `<tr class="hit" data-i="${i}">
       <td><strong>${esc(r.project)}</strong></td>
       <td style="color:${r.risk>=70?'var(--bad)':r.risk>=30?'var(--warn)':'var(--acc)'}"><strong>${r.risk}</strong></td>
-      <td>${r.direct?'<span class="pill dir">direct</span>':'<span class="pill">transitive</span>'}${r.kev?' <span class="pill kev">KEV</span>':''}</td>
+      <td>${r.direct?'<span class="pill dir" title="Direct dependency in package.json">direct</span>':'<span class="pill" title="Transitive dependency down tree">transitive</span>'}${r.kev?' <span class="pill kev" title="CISA KEV: Confirmed actively exploited in wild">KEV</span>':''}</td>
       <td><code>${esc(r.via?.[0]||'')}</code></td>
       <td>${r.fixed?.length?`<code>${esc(r.fixed.slice(0,2).join(', '))}</code>`:'<span style="color:var(--bad)">No fix</span>'}</td>
-    </tr>`).join('');
+      <td style="font-size:11px;color:var(--mut);font-family:monospace" title="Risk = 100 × (CVSS/10) × (0.2 + 0.8×Exploit) × Runtime">${calc}</td>
+    </tr>`;
+    }).join('');
   document.querySelectorAll('tr.hit').forEach(tr=>tr.onclick=()=>{
     document.querySelectorAll('tr.hit').forEach(x=>x.classList.remove('sel'));
     tr.classList.add('sel');
