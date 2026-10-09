@@ -1,0 +1,8 @@
+networkx
+requests
+cvss
+packaging
+fastapi
+uvicorn[standard]
+watchdog
+python-dotenv

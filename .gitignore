@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+dist/
+build/
+.env
+
+# Generated scan outputs (regenerate with pipeline)
+findings.json
+patch_plan.json
+.osv_cache.json
+.last_scan_state.json
+
+# npm / Node
+node_modules/
+frontend/dist/
+
+# Corpus (generated; lockfiles are real when fetched live)
+corpus/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp

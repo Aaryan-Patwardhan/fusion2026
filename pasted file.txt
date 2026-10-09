@@ -1,0 +1,52 @@
+vulngraph-ai/
+│
+├── backend/
+│   ├── main.py
+│   ├── requirements.txt
+│   ├── .env
+│   │
+│   ├── routes/
+│   │   ├── scan.py
+│   │   ├── graph.py
+│   │   └── reports.py
+│   │
+│   ├── services/
+│   │   ├── manifest_parser.py
+│   │   ├── vulnerability_scanner.py
+│   │   ├── dependency_graph.py
+│   │   ├── risk_engine.py
+│   │   ├── patch_planner.py
+│   │   └── ai_explainer.py
+│   │
+│   └── schemas/
+│       └── scan_result.py
+│
+├── frontend/
+│   ├── package.json
+│   ├── index.html
+│   └── src/
+│       ├── App.jsx
+│       ├── api.js
+│       ├── pages/
+│       │   └── Dashboard.jsx
+│       ├── components/
+│       │   ├── UploadPanel.jsx
+│       │   ├── SummaryCards.jsx
+│       │   ├── DependencyGraph.jsx
+│       │   ├── RiskTable.jsx
+│       │   └── PatchPlan.jsx
+│       └── index.css
+│
+├── sample_data/
+│   ├── package.json
+│   ├── requirements.txt
+│   ├── pom.xml
+│   └── demo_dependencies.json
+│
+├── tests/
+│   ├── test_parser.py
+│   ├── test_scanner.py
+│   └── test_graph.py
+│
+├── .gitignore
+└── README.md

@@ -1,0 +1,14 @@
+{
+  "_comment": "Illustrative dependency list used for Hyron AI documentation and demo scripts.",
+  "_note": "This is NOT a real lockfile — it is documentation only. Generate real lockfiles with make_corpus.py.",
+  "npm_packages_with_known_cves": [
+    {"name": "lodash",          "version": "4.17.15", "cve": "CVE-2021-23337", "cvss": 7.2,  "epss": 0.003},
+    {"name": "minimist",        "version": "1.2.0",   "cve": "CVE-2020-7598",  "cvss": 5.6,  "epss": 0.011},
+    {"name": "axios",           "version": "0.21.1",  "cve": "CVE-2021-3749",  "cvss": 7.5,  "epss": 0.005},
+    {"name": "jsonwebtoken",    "version": "8.5.1",   "cve": "CVE-2022-23529", "cvss": 6.8,  "epss": 0.002},
+    {"name": "node-fetch",      "version": "2.6.0",   "cve": "CVE-2022-0235",  "cvss": 6.1,  "epss": 0.001},
+    {"name": "ejs",             "version": "3.0.1",   "cve": "CVE-2022-29078", "cvss": 9.8,  "epss": 0.020},
+    {"name": "marked",          "version": "0.7.0",   "cve": "CVE-2022-21681", "cvss": 7.5,  "epss": 0.004},
+    {"name": "ws",              "version": "7.2.0",   "cve": "CVE-2021-32640", "cvss": 7.5,  "epss": 0.002}
+  ]
+}

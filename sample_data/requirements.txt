@@ -1,0 +1,7 @@
+# Sample Python requirements with historically-vulnerable pinned versions
+# (PyPI/pip support is a roadmap item for Hyron AI — not yet implemented)
+flask==1.0.0
+requests==2.18.4
+pyyaml==3.13
+Pillow==6.2.2
+urllib3==1.24.2

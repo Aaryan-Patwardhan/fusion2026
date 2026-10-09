@@ -1,0 +1,107 @@
+/* Hyron AI — Dashboard Global Styles · FUSION 2026 · CSB-03 */
+:root {
+  --bg:    #0b1118;
+  --card:  #121b26;
+  --line:  #223044;
+  --tx:    #e6edf5;
+  --mut:   #8aa0b8;
+  --acc:   #3dd6c6;
+  --bad:   #ff5d5d;
+  --warn:  #ffb454;
+  --auto:  #3dd6c6;
+  --review:#ffb454;
+  --escalate: #ff5d5d;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--tx);
+  font: 14px/1.5 system-ui, -apple-system, sans-serif;
+  padding: 0;
+}
+
+h1 { font-size: 22px; margin: 0 0 2px; color: var(--tx); }
+h2 { font-size: 14px; margin: 0 0 10px; color: var(--mut); font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+
+a { color: var(--acc); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+/* Summary tiles */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+}
+.tile { text-align: center; padding: 14px 10px; }
+.tile .value { display: block; font-size: 26px; font-weight: 700; color: var(--acc); }
+.tile .label { font-size: 11px; color: var(--mut); margin-top: 2px; }
+
+/* Table */
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { color: var(--mut); font-weight: 500; }
+tr:hover td { background: #18273a; }
+
+/* Pills / badges */
+.pill {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+.pill-kev      { color: var(--bad);  border-color: var(--bad);  background: #ff5d5d18; }
+.pill-direct   { color: var(--warn); border-color: var(--warn); background: #ffb45418; }
+.pill-auto     { color: var(--auto); border-color: var(--auto); background: #3dd6c618; }
+.pill-review   { color: var(--review); border-color: var(--review); background: #ffb45418; }
+.pill-escalate { color: var(--bad);  border-color: var(--bad);  background: #ff5d5d18; }
+
+/* Input */
+input[type="text"], input[type="search"], select {
+  background: #0e1620;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--tx);
+  font-size: 14px;
+  padding: 9px 12px;
+  width: 100%;
+  outline: none;
+}
+input:focus, select:focus { border-color: var(--acc); }
+
+/* Code */
+code {
+  color: var(--acc);
+  font-size: 12px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  word-break: break-all;
+}
+
+/* Risk color scale */
+.risk-high   { color: var(--bad); }
+.risk-medium { color: var(--warn); }
+.risk-low    { color: var(--acc); }
+
+/* Scrollable overflow */
+.scroll-x { overflow-x: auto; }
+
+/* Graph container */
+#cy-container {
+  height: 380px;
+  border-radius: 8px;
+  background: #0e1620;
+  border: 1px solid var(--line);
+}

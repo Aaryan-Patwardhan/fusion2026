@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hyron AI — Supply-Chain Blast Radius</title>
+  <style>
+    :root{--bg:#0b1118;--card:#121b26;--line:#223044;--tx:#e6edf5;--mut:#8aa0b8;--acc:#3dd6c6;--bad:#ff5d5d;--warn:#ffb454}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.5 system-ui,sans-serif;padding:20px 16px}
+    h1{font-size:22px;margin:0 0 2px}.brand{color:var(--acc)}.sub{color:var(--mut);margin-bottom:16px;font-size:13px}
+    .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:14px}
+    .tile,.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+    .tile{text-align:center}.tile b{display:block;font-size:24px;color:var(--acc)}.tile span{color:var(--mut);font-size:11px}
+    input,select{width:100%;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:#0e1620;color:var(--tx);font-size:14px;outline:none}
+    input:focus,select:focus{border-color:var(--acc)}
+    .row{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}@media(min-width:900px){.row{grid-template-columns:1.3fr 1fr}}
+    table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+    th{color:var(--mut);font-weight:500}tr.hit:hover td{background:#18273a;cursor:pointer}tr.sel td{background:#18273a}
+    .pill{padding:1px 8px;border-radius:99px;font-size:11px;font-weight:600;border:1px solid var(--line);display:inline-block}
+    .kev{color:var(--bad);border-color:var(--bad);background:#ff5d5d18}.dir{color:var(--warn);border-color:var(--warn);background:#ffb45418}
+    .auto{color:var(--acc);border-color:var(--acc)}.review{color:var(--warn);border-color:var(--warn)}.escalate{color:var(--bad);border-color:var(--bad)}
+    code{color:var(--acc);font-size:12px;word-break:break-all}#cy{height:360px;border-radius:8px;background:#0e1620;border:1px solid var(--line)}
+    .sc{overflow-x:auto}h2{font-size:13px;margin:0 0 8px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+    .brief{white-space:pre-wrap;font-family:inherit;font-size:13px;line-height:1.6;margin:0}
+    .badge{font-size:11px;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:1px 10px;margin-left:10px;vertical-align:middle}
+  </style>
+</head>
+<body>
+<h1><span class="brand">Hyron AI</span> <span class="badge">FUSION 2026 · CSB-03</span> <a href="https://osv.dev" target="_blank" class="badge" style="color:var(--acc);text-decoration:none">Dataset: OSV.dev ↗</a></h1>
+<div class="sub">Local-first dependency incident daemon — Watch · Map · Prioritise · Act</div>
+<div class="tiles" id="tiles"></div>
+<input id="q" list="vl" placeholder="e.g. CVE-2024-45590  or  GHSA-xxxx-yyyy-zzzz" autocomplete="off">
+<datalist id="vl"></datalist>
+<div class="row">
+  <div class="card sc"><h2 id="rt">Affected projects</h2><table id="res"><tbody></tbody></table></div>
+  <div class="card"><h2>Dependency path (click a project row)</h2><div id="cy"></div></div>
+</div>
+<div class="card sc" style="margin-top:12px"><h2>Patch order — highest risk removed first</h2><table id="pp"><tbody></tbody></table></div>
+<div class="card" id="brief-card" style="margin-top:12px;display:none">
+  <h2>Incident brief</h2>
+  <pre id="brief-text" class="brief"></pre>
+  <p style="color:var(--mut);font-size:11px;margin-top:8px;border-top:1px solid var(--line);padding-top:8px" id="brief-disc"></p>
+</div>
+<script src="/static/cytoscape.min.js"></script>
+<script>
+const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const j=u=>fetch(u).then(r=>r.ok?r.json():Promise.reject(r.status));
+let cy=null, current=[], selProject=null;
+
+async function init(){
+  const s=await j('/api/summary').catch(()=>null);
+  if(!s){$('#tiles').innerHTML='<div class="card" style="grid-column:1/-1;color:var(--bad)">⚠ Run the pipeline first: <code>python -m backend.main corpus/*/package-lock.json</code></div>';return;}
+  $('#tiles').innerHTML=[['Projects',s.projects],['Findings',s.findings],['CISA KEV',s.kev],['Direct',s.direct],['Transitive',s.transitive]]
+    .map(([k,v])=>`<div class="tile"><b>${v}</b><span>${k}</span></div>`).join('');
+  $('#vl').innerHTML=s.vulns.map(v=>`<option value="${v}">`).join('');
+  if(s.vulns[0]){$('#q').value=s.vulns[0];await search();}
+  loadPatch(null);
+}
+
+async function search(){
+  const q=$('#q').value.trim();if(!q)return;
+  selProject=null;
+  const d=await j('/api/blast?q='+encodeURIComponent(q)).catch(()=>({results:[]}));
+  current=d.results||[];
+  $('#rt').innerHTML=`${esc(q)}: ${current.length} project(s) affected <a href="https://osv.dev/vulnerability/${encodeURIComponent(q)}" target="_blank" style="float:right;color:var(--acc);font-size:12px;text-decoration:none;text-transform:none">View on OSV.dev ↗</a>`;
+  $('#res tbody').innerHTML='<tr><th>Project</th><th>Risk</th><th>Type</th><th>Via</th><th>Fix</th></tr>'+
+    current.map((r,i)=>`<tr class="hit" data-i="${i}">
+      <td><strong>${esc(r.project)}</strong></td>
+      <td style="color:${r.risk>=70?'var(--bad)':r.risk>=30?'var(--warn)':'var(--acc)'}"><strong>${r.risk}</strong></td>
+      <td>${r.direct?'<span class="pill dir">direct</span>':'<span class="pill">transitive</span>'}${r.kev?' <span class="pill kev">KEV</span>':''}</td>
+      <td><code>${esc(r.via?.[0]||'')}</code></td>
+      <td>${r.fixed?.length?`<code>${esc(r.fixed.slice(0,2).join(', '))}</code>`:'<span style="color:var(--bad)">No fix</span>'}</td>
+    </tr>`).join('');
+  document.querySelectorAll('tr.hit').forEach(tr=>tr.onclick=()=>{
+    document.querySelectorAll('tr.hit').forEach(x=>x.classList.remove('sel'));
+    tr.classList.add('sel');
+    const r=current[tr.dataset.i];
+    selProject=r.project;
+    draw(r); loadPatch(r.project);
+    loadBrief(q,r.project);
+  });
+  if(current[0]){document.querySelector('tr.hit').classList.add('sel');draw(current[0]);loadBrief(q,current[0].project);}
+}
+
+function draw(r){
+  if(typeof cytoscape==='undefined'){$('#cy').textContent='cytoscape.min.js missing — see README';return;}
+  const nodes=new Map(),edges=[];
+  (r.paths||[]).forEach(p=>{
+    const ids=[r.project,...p.slice(1)];
+    ids.forEach((n,i)=>{nodes.set(n,i===0?'root':i===ids.length-1?'bad':'mid');if(i>0)edges.push([ids[i-1],n]);});
+  });
+  if(cy)cy.destroy();
+  cy=cytoscape({container:$('#cy'),elements:[...[...nodes].map(([id,t])=>({data:{id,t}})),...edges.map(([s,t],i)=>({data:{id:'e'+i,source:s,target:t}}))],
+    style:[
+      {selector:'node',style:{label:'data(id)','font-size':8,color:'#e6edf5','text-valign':'bottom','text-margin-y':4,'background-color':'#3dd6c6',width:14,height:14}},
+      {selector:'node[t="root"]',style:{'background-color':'#7aa2ff',width:22,height:22}},
+      {selector:'node[t="bad"]',style:{'background-color':'#ff5d5d',width:22,height:22}},
+      {selector:'edge',style:{width:1.5,'line-color':'#415a77','target-arrow-color':'#415a77','target-arrow-shape':'triangle','curve-style':'bezier'}}
+    ],
+    layout:{name:'breadthfirst',directed:true,padding:20,spacingFactor:1.25}});
+}
+
+async function loadPatch(p){
+  const url='/api/patch'+(p?'?project='+encodeURIComponent(p):'?n=30');
+  const d=await j(url).catch(()=>[]);
+  $('#pp tbody').innerHTML='<tr><th>#</th><th>Project</th><th>Package</th><th>Fix to</th><th>Risk removed</th><th>Tier</th><th>Action</th></tr>'+
+    d.map(x=>{
+      const tier=(x.tier||'').toLowerCase();
+      return `<tr><td style="color:var(--mut)">${x.order}</td><td>${esc(x.project)}</td>
+        <td><code>${esc(x.package)}@${esc(x.current)}</code></td>
+        <td>${x.target?`<code style="color:var(--acc)">${esc(x.target)}</code>`:'<span style="color:var(--bad)">—</span>'}</td>
+        <td style="color:${x.risk_removed>=70?'var(--bad)':x.risk_removed>=30?'var(--warn)':'var(--acc)'}"><strong>${x.risk_removed}</strong></td>
+        <td><span class="pill ${tier}">${x.tier||''}</span></td>
+        <td><code style="font-size:11px">${esc(x.action)}</code></td></tr>`;
+    }).join('');
+}
+
+async function loadBrief(cve,project){
+  const url='/api/brief?cve='+encodeURIComponent(cve)+'&project='+encodeURIComponent(project);
+  const d=await j(url).catch(()=>null);
+  if(!d){$('#brief-card').style.display='none';return;}
+  $('#brief-card').style.display='';
+  $('#brief-text').textContent=d.brief||'';
+  $('#brief-disc').textContent=d.disclaimer||'';
+}
+
+$('#q').addEventListener('change',search);
+init();
+</script>
+</body>
+</html>
