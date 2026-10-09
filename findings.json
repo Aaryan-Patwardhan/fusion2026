@@ -1,0 +1,5067 @@
+[
+ {
+  "project": "app-01",
+  "package": "ejs@3.0.1",
+  "vuln": "GHSA-phwq-j96m-2c2q",
+  "cve": "CVE-2022-29078",
+  "summary": "ejs template injection vulnerability",
+  "cvss": 9.8,
+  "epss": 0.32808,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "ejs@3.0.1",
+  "path": [
+   "app-01",
+   "ejs@3.0.1"
+  ],
+  "fixed": [
+   "3.1.7"
+  ],
+  "risk": 45.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-phwq-j96m-2c2q",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-r5fr-rjxr-66jc",
+  "cve": "CVE-2021-23337",
+  "summary": "lodash vulnerable to Code Injection via `_.template` imports key names",
+  "cvss": 8.1,
+  "epss": 0.21333,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-01",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.18.0"
+  ],
+  "risk": 30.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-r5fr-rjxr-66jc",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-r5fr-rjxr-66jc",
+  "cve": "CVE-2021-23337",
+  "summary": "lodash vulnerable to Code Injection via `_.template` imports key names",
+  "cvss": 8.1,
+  "epss": 0.21333,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-02",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.18.0"
+  ],
+  "risk": 30.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-r5fr-rjxr-66jc",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-r5fr-rjxr-66jc",
+  "cve": "CVE-2021-23337",
+  "summary": "lodash vulnerable to Code Injection via `_.template` imports key names",
+  "cvss": 8.1,
+  "epss": 0.21333,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-03",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.18.0"
+  ],
+  "risk": 30.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-r5fr-rjxr-66jc",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-35jh-r3h4-6jhm",
+  "cve": "CVE-2021-23337",
+  "summary": "Command Injection in lodash",
+  "cvss": 7.2,
+  "epss": 0.21333,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-01",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.17.21"
+  ],
+  "risk": 26.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-35jh-r3h4-6jhm",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-35jh-r3h4-6jhm",
+  "cve": "CVE-2021-23337",
+  "summary": "Command Injection in lodash",
+  "cvss": 7.2,
+  "epss": 0.21333,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-02",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.17.21"
+  ],
+  "risk": 26.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-35jh-r3h4-6jhm",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-35jh-r3h4-6jhm",
+  "cve": "CVE-2021-23337",
+  "summary": "Command Injection in lodash",
+  "cvss": 7.2,
+  "epss": 0.21333,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-03",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.17.21"
+  ],
+  "risk": 26.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-35jh-r3h4-6jhm",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-f2jv-r9rf-7988",
+  "cve": "CVE-2021-23369",
+  "summary": "Remote code execution in handlebars when compiling templates",
+  "cvss": 9.8,
+  "epss": 0.07028,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.7"
+  ],
+  "risk": 25.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-f2jv-r9rf-7988",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "moment@2.29.1",
+  "vuln": "GHSA-8hfj-j24r-96c4",
+  "cve": "CVE-2022-24785",
+  "summary": "Path Traversal: 'dir/../../filename' in moment.locale",
+  "cvss": 7.5,
+  "epss": 0.13904,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "moment@2.29.1",
+  "path": [
+   "app-01",
+   "moment@2.29.1"
+  ],
+  "fixed": [
+   "2.29.2"
+  ],
+  "risk": 23.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-8hfj-j24r-96c4",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-765h-qjxv-5f44",
+  "cve": "CVE-2021-23383",
+  "summary": "Prototype Pollution in handlebars",
+  "cvss": 9.8,
+  "epss": 0.04506,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.7"
+  ],
+  "risk": 23.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-765h-qjxv-5f44",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "shell-quote@1.7.2",
+  "vuln": "GHSA-g4rg-993r-mgx7",
+  "cve": "CVE-2021-42740",
+  "summary": "Improper Neutralization of Special Elements used in a Command in Shell-quote",
+  "cvss": 9.8,
+  "epss": 0.04221,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > shell-quote@1.7.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "shell-quote@1.7.2"
+  ],
+  "fixed": [
+   "1.7.3"
+  ],
+  "risk": 22.9,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-g4rg-993r-mgx7",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "loader-utils@1.2.3",
+  "vuln": "GHSA-76p3-8jx3-jpfq",
+  "cve": "CVE-2022-37601",
+  "summary": "Prototype pollution in webpack loader-utils",
+  "cvss": 9.8,
+  "epss": 0.02851,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > loader-utils@1.2.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "loader-utils@1.2.3"
+  ],
+  "fixed": [
+   "1.4.1",
+   "2.0.3"
+  ],
+  "risk": 21.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-76p3-8jx3-jpfq",
+  "instances": 3
+ },
+ {
+  "project": "app-03",
+  "package": "ip@1.1.9",
+  "vuln": "GHSA-2p57-rm9w-gvfp",
+  "cve": "CVE-2024-29415",
+  "summary": "ip SSRF improper categorization in isPublic",
+  "cvss": 8.1,
+  "epss": 0.08279,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > ip@1.1.9",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "ip@1.1.9"
+  ],
+  "fixed": [],
+  "risk": 21.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-2p57-rm9w-gvfp",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "sequelize@5.21.0",
+  "vuln": "GHSA-wrh9-cjv3-2hpw",
+  "cve": "CVE-2023-25813",
+  "summary": "Sequelize vulnerable to SQL Injection via replacements",
+  "cvss": 10.0,
+  "epss": 0.01444,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "sequelize@5.21.0",
+  "path": [
+   "app-01",
+   "sequelize@5.21.0"
+  ],
+  "fixed": [
+   "6.19.1"
+  ],
+  "risk": 21.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-wrh9-cjv3-2hpw",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "sequelize@5.21.0",
+  "vuln": "GHSA-wrh9-cjv3-2hpw",
+  "cve": "CVE-2023-25813",
+  "summary": "Sequelize vulnerable to SQL Injection via replacements",
+  "cvss": 10.0,
+  "epss": 0.01444,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "sequelize@5.21.0",
+  "path": [
+   "app-02",
+   "sequelize@5.21.0"
+  ],
+  "fixed": [
+   "6.19.1"
+  ],
+  "risk": 21.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-wrh9-cjv3-2hpw",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-2w6w-674q-4c4q",
+  "cve": "CVE-2026-33937",
+  "summary": "Handlebars.js has JavaScript Injection via AST Type Confusion",
+  "cvss": 9.8,
+  "epss": 0.01736,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.9"
+  ],
+  "risk": 21.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-2w6w-674q-4c4q",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "sequelize@5.21.0",
+  "vuln": "GHSA-f598-mfpv-gmfx",
+  "cve": "CVE-2023-22578",
+  "summary": "Sequelize - Default support for \u201craw attributes\u201d when using parentheses",
+  "cvss": 10.0,
+  "epss": 0.00831,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "sequelize@5.21.0",
+  "path": [
+   "app-01",
+   "sequelize@5.21.0"
+  ],
+  "fixed": [
+   "6.29.0"
+  ],
+  "risk": 20.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-f598-mfpv-gmfx",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "sequelize@5.21.0",
+  "vuln": "GHSA-f598-mfpv-gmfx",
+  "cve": "CVE-2023-22578",
+  "summary": "Sequelize - Default support for \u201craw attributes\u201d when using parentheses",
+  "cvss": 10.0,
+  "epss": 0.00831,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "sequelize@5.21.0",
+  "path": [
+   "app-02",
+   "sequelize@5.21.0"
+  ],
+  "fixed": [
+   "6.29.0"
+  ],
+  "risk": 20.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-f598-mfpv-gmfx",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "form-data@2.3.3",
+  "vuln": "GHSA-fjxv-7rqg-78g4",
+  "cve": "CVE-2025-7783",
+  "summary": "form-data uses unsafe random function in form-data for choosing boundary",
+  "cvss": 9.5,
+  "epss": 0.0191,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 5,
+  "via": "react-scripts@3.4.1 > jest-environment-jsdom-fourteen@1.0.1 > jsdom@14.1.0 > request@2.88.2 > form-data@2.3.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "jest-environment-jsdom-fourteen@1.0.1",
+   "jsdom@14.1.0",
+   "request@2.88.2",
+   "form-data@2.3.3"
+  ],
+  "fixed": [
+   "2.5.4",
+   "3.0.4",
+   "4.0.4"
+  ],
+  "risk": 20.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-fjxv-7rqg-78g4",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "sequelize@5.21.0",
+  "vuln": "GHSA-vqfx-gj96-3w95",
+  "cve": "CVE-2023-22579",
+  "summary": "Unsafe fall-through in getWhereConditions",
+  "cvss": 9.9,
+  "epss": 0.00809,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "sequelize@5.21.0",
+  "path": [
+   "app-01",
+   "sequelize@5.21.0"
+  ],
+  "fixed": [
+   "6.28.1"
+  ],
+  "risk": 20.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-vqfx-gj96-3w95",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "sequelize@5.21.0",
+  "vuln": "GHSA-vqfx-gj96-3w95",
+  "cve": "CVE-2023-22579",
+  "summary": "Unsafe fall-through in getWhereConditions",
+  "cvss": 9.9,
+  "epss": 0.00809,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "sequelize@5.21.0",
+  "path": [
+   "app-02",
+   "sequelize@5.21.0"
+  ],
+  "fixed": [
+   "6.28.1"
+  ],
+  "risk": 20.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-vqfx-gj96-3w95",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-cph5-m8f7-6c5x",
+  "cve": "CVE-2021-3749",
+  "summary": "axios Inefficient Regular Expression Complexity vulnerability",
+  "cvss": 7.5,
+  "epss": 0.08515,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.21.2"
+  ],
+  "risk": 20.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-cph5-m8f7-6c5x",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-cph5-m8f7-6c5x",
+  "cve": "CVE-2021-3749",
+  "summary": "axios Inefficient Regular Expression Complexity vulnerability",
+  "cvss": 7.5,
+  "epss": 0.08515,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.21.2"
+  ],
+  "risk": 20.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-cph5-m8f7-6c5x",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-8r5x-fm3f-whwj",
+  "cve": "CVE-2026-106446",
+  "summary": "Handlebars: JavaScript Injection via AST Type Confusion in compile (bypass of CVE-2026-33937)",
+  "cvss": 9.8,
+  "epss": 0.0064,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.10"
+  ],
+  "risk": 20.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-8r5x-fm3f-whwj",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "sequelize@5.21.0",
+  "vuln": "GHSA-v8fg-2rw7-q452",
+  "cve": "CVE-2026-69240",
+  "summary": "Sequelize: SQL Injection (Oracle DB)",
+  "cvss": 9.8,
+  "epss": 0.0054,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "sequelize@5.21.0",
+  "path": [
+   "app-01",
+   "sequelize@5.21.0"
+  ],
+  "fixed": [
+   "6.37.4"
+  ],
+  "risk": 20.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-v8fg-2rw7-q452",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "sequelize@5.21.0",
+  "vuln": "GHSA-v8fg-2rw7-q452",
+  "cve": "CVE-2026-69240",
+  "summary": "Sequelize: SQL Injection (Oracle DB)",
+  "cvss": 9.8,
+  "epss": 0.0054,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "sequelize@5.21.0",
+  "path": [
+   "app-02",
+   "sequelize@5.21.0"
+  ],
+  "fixed": [
+   "6.37.4"
+  ],
+  "risk": 20.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-v8fg-2rw7-q452",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-p8wg-vrv2-v86f",
+  "cve": "CVE-2026-106445",
+  "summary": "Handlebars: JavaScript Injection via Own Property Check Bypass",
+  "cvss": 9.5,
+  "epss": 0.00411,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.10"
+  ],
+  "risk": 19.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-p8wg-vrv2-v86f",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "moment@2.29.1",
+  "vuln": "GHSA-wc69-rhjr-hc9g",
+  "cve": "CVE-2022-31129",
+  "summary": "Moment.js vulnerable to Inefficient Regular Expression Complexity",
+  "cvss": 7.5,
+  "epss": 0.05551,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "moment@2.29.1",
+  "path": [
+   "app-01",
+   "moment@2.29.1"
+  ],
+  "fixed": [
+   "2.29.4"
+  ],
+  "risk": 18.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-wc69-rhjr-hc9g",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "serialize-javascript@2.1.0",
+  "vuln": "GHSA-hxcc-f52p-wc94",
+  "cve": "CVE-2020-7660",
+  "summary": "Insecure serialization leading to RCE in serialize-javascript",
+  "cvss": 8.1,
+  "epss": 0.03009,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "serialize-javascript@2.1.0",
+  "path": [
+   "app-02",
+   "serialize-javascript@2.1.0"
+  ],
+  "fixed": [
+   "3.1.0"
+  ],
+  "risk": 18.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-hxcc-f52p-wc94",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "serialize-javascript@2.1.2",
+  "vuln": "GHSA-hxcc-f52p-wc94",
+  "cve": "CVE-2020-7660",
+  "summary": "Insecure serialization leading to RCE in serialize-javascript",
+  "cvss": 8.1,
+  "epss": 0.03009,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > terser-webpack-plugin@2.3.5 > serialize-javascript@2.1.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "terser-webpack-plugin@2.3.5",
+   "serialize-javascript@2.1.2"
+  ],
+  "fixed": [
+   "3.1.0"
+  ],
+  "risk": 18.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-hxcc-f52p-wc94",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-p6mc-m468-83gw",
+  "cve": "CVE-2020-8203",
+  "summary": "Prototype Pollution in lodash",
+  "cvss": 7.4,
+  "epss": 0.05213,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-01",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.17.19"
+  ],
+  "risk": 17.9,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-p6mc-m468-83gw",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-p6mc-m468-83gw",
+  "cve": "CVE-2020-8203",
+  "summary": "Prototype Pollution in lodash",
+  "cvss": 7.4,
+  "epss": 0.05213,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-02",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.17.19"
+  ],
+  "risk": 17.9,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-p6mc-m468-83gw",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-p6mc-m468-83gw",
+  "cve": "CVE-2020-8203",
+  "summary": "Prototype Pollution in lodash",
+  "cvss": 7.4,
+  "epss": 0.05213,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-03",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.17.19"
+  ],
+  "risk": 17.9,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-p6mc-m468-83gw",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-pjwm-pj3p-43mv",
+  "cve": "CVE-2026-44492",
+  "summary": "axios's shouldBypassProxy does not recognize IPv4-mapped IPv6 addresses, allowing NO_PROXY bypass (incomplete fix for CVE-2025-62718)",
+  "cvss": 8.6,
+  "epss": 0.00783,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.32.0",
+   "1.16.0"
+  ],
+  "risk": 17.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-pjwm-pj3p-43mv",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-pjwm-pj3p-43mv",
+  "cve": "CVE-2026-44492",
+  "summary": "axios's shouldBypassProxy does not recognize IPv4-mapped IPv6 addresses, allowing NO_PROXY bypass (incomplete fix for CVE-2025-62718)",
+  "cvss": 8.6,
+  "epss": 0.00783,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.32.0",
+   "1.16.0"
+  ],
+  "risk": 17.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-pjwm-pj3p-43mv",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-5gfm-wpxj-wjgq",
+  "cve": "CVE-2025-12816",
+  "summary": "node-forge has an Interpretation Conflict vulnerability via its ASN.1 Validator Desynchronization",
+  "cvss": 8.6,
+  "epss": 0.00742,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.3.2"
+  ],
+  "risk": 17.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-5gfm-wpxj-wjgq",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-3mfm-83xf-c92r",
+  "cve": "CVE-2026-33938",
+  "summary": "Handlebars.js has JavaScript Injection via AST Type Confusion by tampering @partial-block",
+  "cvss": 8.1,
+  "epss": 0.00843,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.9"
+  ],
+  "risk": 16.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-3mfm-83xf-c92r",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-xhpv-hc6g-r9c6",
+  "cve": "CVE-2026-33940",
+  "summary": "Handlebars.js has JavaScript Injection via AST Type Confusion when passing an object as dynamic partial",
+  "cvss": 8.1,
+  "epss": 0.00791,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.9"
+  ],
+  "risk": 16.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-xhpv-hc6g-r9c6",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "marked@0.7.0",
+  "vuln": "GHSA-5v2h-r2cx-5xgj",
+  "cve": "CVE-2022-21681",
+  "summary": "Inefficient Regular Expression Complexity in marked",
+  "cvss": 7.5,
+  "epss": 0.02766,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "marked@0.7.0",
+  "path": [
+   "app-03",
+   "marked@0.7.0"
+  ],
+  "fixed": [
+   "4.0.10"
+  ],
+  "risk": 16.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-5v2h-r2cx-5xgj",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "marked@0.7.0",
+  "vuln": "GHSA-rrrm-qjm4-v8hf",
+  "cve": "CVE-2022-21680",
+  "summary": "Inefficient Regular Expression Complexity in marked",
+  "cvss": 7.5,
+  "epss": 0.02852,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "marked@0.7.0",
+  "path": [
+   "app-03",
+   "marked@0.7.0"
+  ],
+  "fixed": [
+   "4.0.10"
+  ],
+  "risk": 16.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-rrrm-qjm4-v8hf",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "semver@6.3.0",
+  "vuln": "GHSA-c2qf-rxjj-qqgw",
+  "cve": "CVE-2022-25883",
+  "summary": "semver vulnerable to Regular Expression Denial of Service",
+  "cvss": 7.5,
+  "epss": 0.02761,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "react-scripts@3.4.1 > semver@6.3.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "semver@6.3.0"
+  ],
+  "fixed": [
+   "5.7.2",
+   "6.3.1",
+   "7.5.2"
+  ],
+  "risk": 16.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-c2qf-rxjj-qqgw",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "loader-utils@1.2.3",
+  "vuln": "GHSA-hhq3-ff78-jv3g",
+  "cve": "CVE-2022-37599",
+  "summary": "loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS)",
+  "cvss": 7.5,
+  "epss": 0.02761,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > loader-utils@1.2.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "loader-utils@1.2.3"
+  ],
+  "fixed": [
+   "1.4.2",
+   "2.0.4",
+   "3.2.1"
+  ],
+  "risk": 16.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-hhq3-ff78-jv3g",
+  "instances": 3
+ },
+ {
+  "project": "app-03",
+  "package": "shell-quote@1.7.2",
+  "vuln": "GHSA-w7jw-789q-3m8p",
+  "cve": "CVE-2026-9277",
+  "summary": "shell-quote quote() does not escape newlines in object .op values",
+  "cvss": 8.1,
+  "epss": 0.00824,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > shell-quote@1.7.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "shell-quote@1.7.2"
+  ],
+  "fixed": [
+   "1.8.4"
+  ],
+  "risk": 16.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-w7jw-789q-3m8p",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "svgo@1.3.2",
+  "vuln": "GHSA-2p49-hgcm-8545",
+  "cve": "CVE-2026-73650",
+  "summary": "SVGO removeScripts plugin leaves some executable scripts intact",
+  "cvss": 8.2,
+  "epss": 0.00435,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > @svgr/webpack@4.3.3 > @svgr/plugin-svgo@4.3.1 > svgo@1.3.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "@svgr/webpack@4.3.3",
+   "@svgr/plugin-svgo@4.3.1",
+   "svgo@1.3.2"
+  ],
+  "fixed": [
+   "2.8.3",
+   "3.3.4",
+   "4.0.2"
+  ],
+  "risk": 16.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-2p49-hgcm-8545",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "svgo@1.3.2",
+  "vuln": "GHSA-w27v-7q3p-w38r",
+  "cve": "CVE-2026-84370",
+  "summary": "SVGO: removeScripts allows executable links through namespace and control-character bypasses",
+  "cvss": 8.2,
+  "epss": 0.00525,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > @svgr/webpack@4.3.3 > @svgr/plugin-svgo@4.3.1 > svgo@1.3.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "@svgr/webpack@4.3.3",
+   "@svgr/plugin-svgo@4.3.1",
+   "svgo@1.3.2"
+  ],
+  "fixed": [
+   "2.8.4",
+   "3.3.5",
+   "4.1.0"
+  ],
+  "risk": 16.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-w27v-7q3p-w38r",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "flatted@2.0.2",
+  "vuln": "GHSA-rf6f-7fwh-wjgh",
+  "cve": "CVE-2026-33228",
+  "summary": "Prototype Pollution via parse() in NodeJS flatted",
+  "cvss": 8.0,
+  "epss": 0.00989,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 5,
+  "via": "react-scripts@3.4.1 > eslint@6.8.0 > file-entry-cache@5.0.1 > flat-cache@2.0.1 > flatted@2.0.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "eslint@6.8.0",
+   "file-entry-cache@5.0.1",
+   "flat-cache@2.0.1",
+   "flatted@2.0.2"
+  ],
+  "fixed": [
+   "3.4.2"
+  ],
+  "risk": 16.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-rf6f-7fwh-wjgh",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-jr5f-v2jv-69x6",
+  "cve": "CVE-2025-27152",
+  "summary": "axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL",
+  "cvss": 8.0,
+  "epss": 0.00792,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.30.0",
+   "1.8.2"
+  ],
+  "risk": 16.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-jr5f-v2jv-69x6",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-p92q-9vqr-4j8v",
+  "cve": "CVE-2026-44487",
+  "summary": "Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter",
+  "cvss": 8.0,
+  "epss": 0.0076,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.32.0",
+   "1.16.0"
+  ],
+  "risk": 16.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-p92q-9vqr-4j8v",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-jr5f-v2jv-69x6",
+  "cve": "CVE-2025-27152",
+  "summary": "axios Requests Vulnerable To Possible SSRF and Credential Leakage via Absolute URL",
+  "cvss": 8.0,
+  "epss": 0.00792,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.30.0",
+   "1.8.2"
+  ],
+  "risk": 16.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-jr5f-v2jv-69x6",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-p92q-9vqr-4j8v",
+  "cve": "CVE-2026-44487",
+  "summary": "Axios: Proxy-Authorization Credential Leak to Origin Server Across HTTP-to-HTTPS Redirect in Axios Node.js HTTP Adapter",
+  "cvss": 8.0,
+  "epss": 0.0076,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.32.0",
+   "1.16.0"
+  ],
+  "risk": 16.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-p92q-9vqr-4j8v",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-xjpj-3mr7-gcpf",
+  "cve": "CVE-2026-33941",
+  "summary": "Handlebars.js has JavaScript Injection in CLI Precompiler via Unescaped Names and Options",
+  "cvss": 8.2,
+  "epss": 0.0022,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.9"
+  ],
+  "risk": 16.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-xjpj-3mr7-gcpf",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "object-path@0.11.4",
+  "vuln": "GHSA-cwx2-736x-mf6w",
+  "cve": "CVE-2020-15256",
+  "summary": "Prototype pollution in object-path",
+  "cvss": 7.7,
+  "epss": 0.01546,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > adjust-sourcemap-loader@2.0.0 > object-path@0.11.4",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "resolve-url-loader@3.1.1",
+   "adjust-sourcemap-loader@2.0.0",
+   "object-path@0.11.4"
+  ],
+  "fixed": [
+   "0.11.5"
+  ],
+  "risk": 16.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-cwx2-736x-mf6w",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "loader-utils@1.2.3",
+  "vuln": "GHSA-3rfm-jhwj-7488",
+  "cve": "CVE-2022-37603",
+  "summary": "loader-utils is vulnerable to Regular Expression Denial of Service (ReDoS) via url variable",
+  "cvss": 7.5,
+  "epss": 0.02198,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > loader-utils@1.2.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "loader-utils@1.2.3"
+  ],
+  "fixed": [
+   "1.4.2",
+   "2.0.4",
+   "3.2.1"
+  ],
+  "risk": 16.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-3rfm-jhwj-7488",
+  "instances": 3
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-554w-wpv2-vw27",
+  "cve": "CVE-2025-66031",
+  "summary": "node-forge has ASN.1 Unbounded Recursion",
+  "cvss": 8.0,
+  "epss": 0.0043,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.3.2"
+  ],
+  "risk": 16.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-554w-wpv2-vw27",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "minimatch@3.0.4",
+  "vuln": "GHSA-3ppc-4f35-3m26",
+  "cve": "CVE-2026-26996",
+  "summary": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+  "cvss": 8.0,
+  "epss": 0.00535,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > recursive-readdir@2.2.2 > minimatch@3.0.4",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "recursive-readdir@2.2.2",
+   "minimatch@3.0.4"
+  ],
+  "fixed": [
+   "10.2.1",
+   "3.1.3",
+   "4.2.4",
+   "5.1.7",
+   "6.2.1",
+   "7.4.7",
+   "8.0.5",
+   "9.0.6"
+  ],
+  "risk": 16.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-3ppc-4f35-3m26",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "tmp@0.0.33",
+  "vuln": "GHSA-ph9p-34f9-6g65",
+  "cve": "CVE-2026-44705",
+  "summary": "tmp has Path Traversal via unsanitized prefix/postfix that enables directory escape",
+  "cvss": 8.0,
+  "epss": 0.00495,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 5,
+  "via": "react-scripts@3.4.1 > eslint@6.8.0 > inquirer@7.3.3 > external-editor@3.1.0 > tmp@0.0.33",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "eslint@6.8.0",
+   "inquirer@7.3.3",
+   "external-editor@3.1.0",
+   "tmp@0.0.33"
+  ],
+  "fixed": [
+   "0.2.6"
+  ],
+  "risk": 16.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-ph9p-34f9-6g65",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "nth-check@1.0.2",
+  "vuln": "GHSA-rp65-9cf3-cjxr",
+  "cve": "CVE-2021-3803",
+  "summary": "Inefficient Regular Expression Complexity in nth-check",
+  "cvss": 7.5,
+  "epss": 0.02206,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 6,
+  "via": "react-scripts@3.4.1 > @svgr/webpack@4.3.3 > @svgr/plugin-svgo@4.3.1 > svgo@1.3.2 > css-select@2.1.0 > nth-check@1.0.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "@svgr/webpack@4.3.3",
+   "@svgr/plugin-svgo@4.3.1",
+   "svgo@1.3.2",
+   "css-select@2.1.0",
+   "nth-check@1.0.2"
+  ],
+  "fixed": [
+   "2.0.1"
+  ],
+  "risk": 16.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-rp65-9cf3-cjxr",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-43fc-jf86-j433",
+  "cve": "CVE-2026-25639",
+  "summary": "Axios is Vulnerable to Denial of Service via __proto__ Key in mergeConfig",
+  "cvss": 7.5,
+  "epss": 0.01989,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.30.3",
+   "1.13.5"
+  ],
+  "risk": 16.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-43fc-jf86-j433",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "serialize-javascript@2.1.0",
+  "vuln": "GHSA-5c6j-r48x-rmvq",
+  "cve": null,
+  "summary": "Serialize JavaScript is Vulnerable to RCE via RegExp.flags and Date.prototype.toISOString()",
+  "cvss": 8.1,
+  "epss": 0.0,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "serialize-javascript@2.1.0",
+  "path": [
+   "app-02",
+   "serialize-javascript@2.1.0"
+  ],
+  "fixed": [
+   "7.0.3"
+  ],
+  "risk": 16.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-5c6j-r48x-rmvq",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-43fc-jf86-j433",
+  "cve": "CVE-2026-25639",
+  "summary": "Axios is Vulnerable to Denial of Service via __proto__ Key in mergeConfig",
+  "cvss": 7.5,
+  "epss": 0.01989,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.30.3",
+   "1.13.5"
+  ],
+  "risk": 16.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-43fc-jf86-j433",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "ansi-html@0.0.7",
+  "vuln": "GHSA-whgm-jr23-g3j9",
+  "cve": "CVE-2021-23424",
+  "summary": "Uncontrolled Resource Consumption in ansi-html",
+  "cvss": 7.5,
+  "epss": 0.02019,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > ansi-html@0.0.7",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "ansi-html@0.0.7"
+  ],
+  "fixed": [
+   "0.0.8"
+  ],
+  "risk": 16.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-whgm-jr23-g3j9",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "serialize-javascript@2.1.2",
+  "vuln": "GHSA-5c6j-r48x-rmvq",
+  "cve": null,
+  "summary": "Serialize JavaScript is Vulnerable to RCE via RegExp.flags and Date.prototype.toISOString()",
+  "cvss": 8.1,
+  "epss": 0.0,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > terser-webpack-plugin@2.3.5 > serialize-javascript@2.1.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "terser-webpack-plugin@2.3.5",
+   "serialize-javascript@2.1.2"
+  ],
+  "fixed": [
+   "7.0.3"
+  ],
+  "risk": 16.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-5c6j-r48x-rmvq",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "object-path@0.11.4",
+  "vuln": "GHSA-8v63-cqqc-6r2c",
+  "cve": "CVE-2021-3805",
+  "summary": "Prototype Pollution in object-path",
+  "cvss": 7.5,
+  "epss": 0.0204,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > adjust-sourcemap-loader@2.0.0 > object-path@0.11.4",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "resolve-url-loader@3.1.1",
+   "adjust-sourcemap-loader@2.0.0",
+   "object-path@0.11.4"
+  ],
+  "fixed": [
+   "0.11.8"
+  ],
+  "risk": 16.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-8v63-cqqc-6r2c",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "serialize-javascript@4.0.0",
+  "vuln": "GHSA-5c6j-r48x-rmvq",
+  "cve": null,
+  "summary": "Serialize JavaScript is Vulnerable to RCE via RegExp.flags and Date.prototype.toISOString()",
+  "cvss": 8.1,
+  "epss": 0.0,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack@4.42.0 > terser-webpack-plugin@1.4.6 > serialize-javascript@4.0.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack@4.42.0",
+   "terser-webpack-plugin@1.4.6",
+   "serialize-javascript@4.0.0"
+  ],
+  "fixed": [
+   "7.0.3"
+  ],
+  "risk": 16.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-5c6j-r48x-rmvq",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "minimatch@3.0.4",
+  "vuln": "GHSA-f8q6-p94x-37v3",
+  "cve": "CVE-2022-3517",
+  "summary": "minimatch ReDoS vulnerability",
+  "cvss": 7.5,
+  "epss": 0.01825,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > recursive-readdir@2.2.2 > minimatch@3.0.4",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "recursive-readdir@2.2.2",
+   "minimatch@3.0.4"
+  ],
+  "fixed": [
+   "3.0.5"
+  ],
+  "risk": 16.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-f8q6-p94x-37v3",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "braces@2.3.2",
+  "vuln": "GHSA-grv7-fg5c-xmjg",
+  "cve": "CVE-2024-4068",
+  "summary": "Uncontrolled resource consumption in braces",
+  "cvss": 7.5,
+  "epss": 0.01471,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack@4.42.0 > micromatch@3.1.10 > braces@2.3.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack@4.42.0",
+   "micromatch@3.1.10",
+   "braces@2.3.2"
+  ],
+  "fixed": [
+   "3.0.3"
+  ],
+  "risk": 15.9,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-grv7-fg5c-xmjg",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-x4jg-mjrx-434g",
+  "cve": "CVE-2022-24772",
+  "summary": "Improper Verification of Cryptographic Signature in node-forge",
+  "cvss": 7.5,
+  "epss": 0.01103,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.3.0"
+  ],
+  "risk": 15.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-x4jg-mjrx-434g",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-62hf-57xw-28j9",
+  "cve": "CVE-2026-42039",
+  "summary": "Axios: unbounded recursion in toFormData causes DoS via deeply nested request data",
+  "cvss": 7.5,
+  "epss": 0.00966,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 15.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-62hf-57xw-28j9",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-hfxv-24rg-xrqf",
+  "cve": "CVE-2026-44496",
+  "summary": "Axios: Regular Expression Denial of Service (ReDoS) via Cookie Name Injection",
+  "cvss": 7.5,
+  "epss": 0.00966,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.32.0",
+   "1.16.0"
+  ],
+  "risk": 15.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-hfxv-24rg-xrqf",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-62hf-57xw-28j9",
+  "cve": "CVE-2026-42039",
+  "summary": "Axios: unbounded recursion in toFormData causes DoS via deeply nested request data",
+  "cvss": 7.5,
+  "epss": 0.00966,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 15.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-62hf-57xw-28j9",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-hfxv-24rg-xrqf",
+  "cve": "CVE-2026-44496",
+  "summary": "Axios: Regular Expression Denial of Service (ReDoS) via Cookie Name Injection",
+  "cvss": 7.5,
+  "epss": 0.00966,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.32.0",
+   "1.16.0"
+  ],
+  "risk": 15.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-hfxv-24rg-xrqf",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "http-proxy-middleware@0.19.1",
+  "vuln": "GHSA-c7qv-q95q-8v27",
+  "cve": "CVE-2024-21536",
+  "summary": "Denial of service in http-proxy-middleware",
+  "cvss": 7.5,
+  "epss": 0.01034,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > http-proxy-middleware@0.19.1",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "http-proxy-middleware@0.19.1"
+  ],
+  "fixed": [
+   "2.0.7",
+   "3.0.3"
+  ],
+  "risk": 15.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-c7qv-q95q-8v27",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "flatted@2.0.2",
+  "vuln": "GHSA-25h7-pfq9-p65f",
+  "cve": "CVE-2026-32141",
+  "summary": "flatted vulnerable to unbounded recursion DoS in parse() revive phase",
+  "cvss": 7.5,
+  "epss": 0.00991,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 5,
+  "via": "react-scripts@3.4.1 > eslint@6.8.0 > file-entry-cache@5.0.1 > flat-cache@2.0.1 > flatted@2.0.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "eslint@6.8.0",
+   "file-entry-cache@5.0.1",
+   "flat-cache@2.0.1",
+   "flatted@2.0.2"
+  ],
+  "fixed": [
+   "3.4.0"
+  ],
+  "risk": 15.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-25h7-pfq9-p65f",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-j5f8-grm9-p9fc",
+  "cve": "CVE-2026-44486",
+  "summary": "Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection",
+  "cvss": 7.5,
+  "epss": 0.0076,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.32.0",
+   "1.16.0"
+  ],
+  "risk": 15.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-j5f8-grm9-p9fc",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-j5f8-grm9-p9fc",
+  "cve": "CVE-2026-44486",
+  "summary": "Axios: Proxy-Authorization header leaks to redirect target when proxy is re-evaluated to direct connection",
+  "cvss": 7.5,
+  "epss": 0.0076,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.32.0",
+   "1.16.0"
+  ],
+  "risk": 15.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-j5f8-grm9-p9fc",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-9cx6-37pm-9jff",
+  "cve": "CVE-2026-33939",
+  "summary": "Handlebars.js has Denial of Service via Malformed Decorator Syntax in Template Compilation",
+  "cvss": 7.5,
+  "epss": 0.00757,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.9"
+  ],
+  "risk": 15.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-9cx6-37pm-9jff",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "cross-spawn@7.0.1",
+  "vuln": "GHSA-3xgq-45jj-v275",
+  "cve": "CVE-2024-21538",
+  "summary": "Regular Expression Denial of Service (ReDoS) in cross-spawn",
+  "cvss": 7.5,
+  "epss": 0.00868,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > cross-spawn@7.0.1",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "cross-spawn@7.0.1"
+  ],
+  "fixed": [
+   "6.0.6",
+   "7.0.5"
+  ],
+  "risk": 15.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-3xgq-45jj-v275",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "webpack-dev-middleware@3.7.3",
+  "vuln": "GHSA-wr3j-pwj9-hqq6",
+  "cve": "CVE-2024-29180",
+  "summary": "Path traversal in webpack-dev-middleware",
+  "cvss": 7.4,
+  "epss": 0.01226,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > webpack-dev-middleware@3.7.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "webpack-dev-middleware@3.7.3"
+  ],
+  "fixed": [
+   "5.3.4",
+   "6.1.2",
+   "7.1.0"
+  ],
+  "risk": 15.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-wr3j-pwj9-hqq6",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-5m6q-g25r-mvwx",
+  "cve": "CVE-2026-33891",
+  "summary": "Forge has Denial of Service via Infinite Loop in BigInteger.modInverse() with Zero Input",
+  "cvss": 7.5,
+  "epss": 0.00897,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.4.0"
+  ],
+  "risk": 15.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-5m6q-g25r-mvwx",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-cfm4-qjh2-4765",
+  "cve": "CVE-2022-24771",
+  "summary": "Improper Verification of Cryptographic Signature in node-forge",
+  "cvss": 7.5,
+  "epss": 0.00779,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.3.0"
+  ],
+  "risk": 15.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-cfm4-qjh2-4765",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss@7.0.39",
+  "vuln": "GHSA-6g55-p6wh-862q",
+  "cve": "CVE-2026-45623",
+  "summary": "PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments",
+  "cvss": 7.5,
+  "epss": 0.00608,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > css-loader@3.4.2 > postcss@7.0.39",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "css-loader@3.4.2",
+   "postcss@7.0.39"
+  ],
+  "fixed": [
+   "8.5.12"
+  ],
+  "risk": 15.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-6g55-p6wh-862q",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "browserslist@4.10.0",
+  "vuln": "GHSA-73wf-gq98-2v4g",
+  "cve": "CVE-2026-73088",
+  "summary": "Browserslist: Uncaught crash / prototype write via untrusted browserslist-stats.json custom stats (normalizeStats)",
+  "cvss": 7.5,
+  "epss": 0.00658,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > browserslist@4.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "browserslist@4.10.0"
+  ],
+  "fixed": [
+   "4.28.7"
+  ],
+  "risk": 15.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-73wf-gq98-2v4g",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "browserslist@4.10.0",
+  "vuln": "GHSA-c83g-rgw3-j3cx",
+  "cve": "CVE-2026-73089",
+  "summary": "Browserslist: Unbounded memory growth (no cache eviction) via distinct query results, leading to eventual OOM",
+  "cvss": 7.5,
+  "epss": 0.00655,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > browserslist@4.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "browserslist@4.10.0"
+  ],
+  "fixed": [
+   "4.28.7"
+  ],
+  "risk": 15.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-c83g-rgw3-j3cx",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss@7.0.21",
+  "vuln": "GHSA-6g55-p6wh-862q",
+  "cve": "CVE-2026-45623",
+  "summary": "PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments",
+  "cvss": 7.5,
+  "epss": 0.00608,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > postcss@7.0.21",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "resolve-url-loader@3.1.1",
+   "postcss@7.0.21"
+  ],
+  "fixed": [
+   "8.5.12"
+  ],
+  "risk": 15.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-6g55-p6wh-862q",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "braces@2.3.2",
+  "vuln": "GHSA-vfj7-8cjw-p6xm",
+  "cve": "CVE-2026-93687",
+  "summary": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+  "cvss": 7.5,
+  "epss": 0.0074,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack@4.42.0 > micromatch@3.1.10 > braces@2.3.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack@4.42.0",
+   "micromatch@3.1.10",
+   "braces@2.3.2"
+  ],
+  "fixed": [],
+  "risk": 15.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-vfj7-8cjw-p6xm",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "minimatch@3.0.4",
+  "vuln": "GHSA-7r86-cg39-jmmj",
+  "cve": "CVE-2026-27903",
+  "summary": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+  "cvss": 7.5,
+  "epss": 0.00595,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > recursive-readdir@2.2.2 > minimatch@3.0.4",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "recursive-readdir@2.2.2",
+   "minimatch@3.0.4"
+  ],
+  "fixed": [
+   "10.2.3",
+   "3.1.3",
+   "4.2.5",
+   "5.1.8",
+   "6.2.2",
+   "7.4.8",
+   "8.0.6",
+   "9.0.7"
+  ],
+  "risk": 15.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-7r86-cg39-jmmj",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "braces@3.0.3",
+  "vuln": "GHSA-vfj7-8cjw-p6xm",
+  "cve": "CVE-2026-93687",
+  "summary": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+  "cvss": 7.5,
+  "epss": 0.0074,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 5,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > fork-ts-checker-webpack-plugin@3.1.1 > chokidar@3.6.0 > braces@3.0.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "fork-ts-checker-webpack-plugin@3.1.1",
+   "chokidar@3.6.0",
+   "braces@3.0.3"
+  ],
+  "fixed": [],
+  "risk": 15.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-vfj7-8cjw-p6xm",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "form-data@2.3.3",
+  "vuln": "GHSA-hmw2-7cc7-3qxx",
+  "cve": "CVE-2026-12143",
+  "summary": "form-data: CRLF injection in form-data via unescaped multipart field names and filenames",
+  "cvss": 7.5,
+  "epss": 0.00669,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 5,
+  "via": "react-scripts@3.4.1 > jest-environment-jsdom-fourteen@1.0.1 > jsdom@14.1.0 > request@2.88.2 > form-data@2.3.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "jest-environment-jsdom-fourteen@1.0.1",
+   "jsdom@14.1.0",
+   "request@2.88.2",
+   "form-data@2.3.3"
+  ],
+  "fixed": [
+   "2.5.6",
+   "3.0.5",
+   "4.0.6"
+  ],
+  "risk": 15.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-hmw2-7cc7-3qxx",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-pf86-5x62-jrwf",
+  "cve": "CVE-2026-42033",
+  "summary": "Axios: Prototype Pollution Gadgets - Response Tampering, Data Exfiltration, and Request Hijacking",
+  "cvss": 7.4,
+  "epss": 0.00924,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 15.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-pf86-5x62-jrwf",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-pf86-5x62-jrwf",
+  "cve": "CVE-2026-42033",
+  "summary": "Axios: Prototype Pollution Gadgets - Response Tampering, Data Exfiltration, and Request Hijacking",
+  "cvss": 7.4,
+  "epss": 0.00924,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 15.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-pf86-5x62-jrwf",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "validator@10.11.0",
+  "vuln": "GHSA-vghf-hv5q-vc2g",
+  "cve": "CVE-2025-12758",
+  "summary": "Validator is Vulnerable to Incomplete Filtering of One or More Instances of Special Elements",
+  "cvss": 7.5,
+  "epss": 0.00517,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "sequelize@5.21.0 > validator@10.11.0",
+  "path": [
+   "app-01",
+   "sequelize@5.21.0",
+   "validator@10.11.0"
+  ],
+  "fixed": [
+   "13.15.22"
+  ],
+  "risk": 15.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-vghf-hv5q-vc2g",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "validator@10.11.0",
+  "vuln": "GHSA-vghf-hv5q-vc2g",
+  "cve": "CVE-2025-12758",
+  "summary": "Validator is Vulnerable to Incomplete Filtering of One or More Instances of Special Elements",
+  "cvss": 7.5,
+  "epss": 0.00517,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "sequelize@5.21.0 > validator@10.11.0",
+  "path": [
+   "app-02",
+   "sequelize@5.21.0",
+   "validator@10.11.0"
+  ],
+  "fixed": [
+   "13.15.22"
+  ],
+  "risk": 15.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-vghf-hv5q-vc2g",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss@7.0.39",
+  "vuln": "GHSA-r28c-9q8g-f849",
+  "cve": "CVE-2026-73646",
+  "summary": "PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure",
+  "cvss": 7.5,
+  "epss": 0.0053,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > css-loader@3.4.2 > postcss@7.0.39",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "css-loader@3.4.2",
+   "postcss@7.0.39"
+  ],
+  "fixed": [
+   "8.5.18"
+  ],
+  "risk": 15.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-r28c-9q8g-f849",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss@7.0.21",
+  "vuln": "GHSA-r28c-9q8g-f849",
+  "cve": "CVE-2026-73646",
+  "summary": "PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure",
+  "cvss": 7.5,
+  "epss": 0.0053,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > postcss@7.0.21",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "resolve-url-loader@3.1.1",
+   "postcss@7.0.21"
+  ],
+  "fixed": [
+   "8.5.18"
+  ],
+  "risk": 15.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-r28c-9q8g-f849",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-86w9-cpqp-85rv",
+  "cve": "CVE-2026-33894",
+  "summary": "node-forge RSA PKCS#1 v1.5 signature verification accepts extra nested DigestAlgorithm elements",
+  "cvss": 7.5,
+  "epss": 0.00446,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [],
+  "risk": 15.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-86w9-cpqp-85rv",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-ppp5-5v6c-4jwp",
+  "cve": "CVE-2026-33894",
+  "summary": "Forge has signature forgery in RSA-PKCS due to ASN.1 extra field  ",
+  "cvss": 7.5,
+  "epss": 0.00446,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.4.0"
+  ],
+  "risk": 15.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-ppp5-5v6c-4jwp",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-q67f-28xg-22rw",
+  "cve": "CVE-2026-33895",
+  "summary": "Forge has signature forgery in Ed25519 due to missing S > L check",
+  "cvss": 7.5,
+  "epss": 0.00472,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.4.0"
+  ],
+  "risk": 15.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-q67f-28xg-22rw",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "minimatch@3.0.4",
+  "vuln": "GHSA-23c5-xmqv-rm74",
+  "cve": "CVE-2026-27904",
+  "summary": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+  "cvss": 7.5,
+  "epss": 0.00505,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > recursive-readdir@2.2.2 > minimatch@3.0.4",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "recursive-readdir@2.2.2",
+   "minimatch@3.0.4"
+  ],
+  "fixed": [
+   "10.2.3",
+   "3.1.4",
+   "4.2.5",
+   "5.1.8",
+   "6.2.2",
+   "7.4.8",
+   "8.0.6",
+   "9.0.7"
+  ],
+  "risk": 15.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-23c5-xmqv-rm74",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "uuid@3.4.0",
+  "vuln": "GHSA-w5hq-g745-h8pq",
+  "cve": "CVE-2026-41907",
+  "summary": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided",
+  "cvss": 7.5,
+  "epss": 0.00378,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "sequelize@5.21.0 > uuid@3.4.0",
+  "path": [
+   "app-01",
+   "sequelize@5.21.0",
+   "uuid@3.4.0"
+  ],
+  "fixed": [
+   "11.1.1",
+   "12.0.1",
+   "13.0.1"
+  ],
+  "risk": 15.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-w5hq-g745-h8pq",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "uuid@3.4.0",
+  "vuln": "GHSA-w5hq-g745-h8pq",
+  "cve": "CVE-2026-41907",
+  "summary": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided",
+  "cvss": 7.5,
+  "epss": 0.00378,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "sequelize@5.21.0 > uuid@3.4.0",
+  "path": [
+   "app-02",
+   "sequelize@5.21.0",
+   "uuid@3.4.0"
+  ],
+  "fixed": [
+   "11.1.1",
+   "12.0.1",
+   "13.0.1"
+  ],
+  "risk": 15.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-w5hq-g745-h8pq",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "shell-quote@1.7.2",
+  "vuln": "GHSA-395f-4hp3-45gv",
+  "cve": "CVE-2026-13311",
+  "summary": "shell-quote: Quadratic-complexity Denial of Service in `parse()` (CWE-407)",
+  "cvss": 7.5,
+  "epss": 0.0036,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > shell-quote@1.7.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "shell-quote@1.7.2"
+  ],
+  "fixed": [
+   "1.9.0"
+  ],
+  "risk": 15.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-395f-4hp3-45gv",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "webpack-dev-middleware@3.7.3",
+  "vuln": "GHSA-g84c-rxfj-3j2c",
+  "cve": "CVE-2026-76844",
+  "summary": "webpack-dev-middleware vulnerable to Path Traversal via non-slash-terminated publicPath",
+  "cvss": 7.4,
+  "epss": 0.00592,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > webpack-dev-middleware@3.7.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "webpack-dev-middleware@3.7.3"
+  ],
+  "fixed": [
+   "7.4.6",
+   "8.3.0"
+  ],
+  "risk": 15.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-g84c-rxfj-3j2c",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "uuid@3.4.0",
+  "vuln": "GHSA-w5hq-g745-h8pq",
+  "cve": "CVE-2026-41907",
+  "summary": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided",
+  "cvss": 7.5,
+  "epss": 0.00378,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > sockjs@0.3.19 > uuid@3.4.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "sockjs@0.3.19",
+   "uuid@3.4.0"
+  ],
+  "fixed": [
+   "11.1.1",
+   "12.0.1",
+   "13.0.1"
+  ],
+  "risk": 15.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-w5hq-g745-h8pq",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-2328-f5f3-gj25",
+  "cve": "CVE-2026-33896",
+  "summary": "Forge has a basicConstraints bypass in its certificate chain verification (RFC 5280 violation)",
+  "cvss": 7.4,
+  "epss": 0.005,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.4.0"
+  ],
+  "risk": 15.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-2328-f5f3-gj25",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-6chq-wfr3-2hj9",
+  "cve": "CVE-2026-42035",
+  "summary": "Axios: Header Injection via Prototype Pollution",
+  "cvss": 7.4,
+  "epss": 0.00381,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 15.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-6chq-wfr3-2hj9",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-6chq-wfr3-2hj9",
+  "cve": "CVE-2026-42035",
+  "summary": "Axios: Header Injection via Prototype Pollution",
+  "cvss": 7.4,
+  "epss": 0.00381,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 15.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-6chq-wfr3-2hj9",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-pmwg-cvhr-8vh7",
+  "cve": "CVE-2026-42043",
+  "summary": "Axios: Incomplete Fix for CVE-2025-62718 \u2014 NO_PROXY Protection Bypassed via RFC 1122 Loopback Subnet (127.0.0.0/8) in Axios 1.15.0",
+  "cvss": 7.2,
+  "epss": 0.00579,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 14.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-pmwg-cvhr-8vh7",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-pmwg-cvhr-8vh7",
+  "cve": "CVE-2026-42043",
+  "summary": "Axios: Incomplete Fix for CVE-2025-62718 \u2014 NO_PROXY Protection Bypassed via RFC 1122 Loopback Subnet (127.0.0.0/8) in Axios 1.15.0",
+  "cvss": 7.2,
+  "epss": 0.00579,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 14.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-pmwg-cvhr-8vh7",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-3g43-6gmg-66jw",
+  "cve": "CVE-2026-44495",
+  "summary": "axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge",
+  "cvss": 7.0,
+  "epss": 0.01041,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.2"
+  ],
+  "risk": 14.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-3g43-6gmg-66jw",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-3g43-6gmg-66jw",
+  "cve": "CVE-2026-44495",
+  "summary": "axios Vulnerable to Credential Theft and Response Hijacking via Prototype Pollution Gadget in Config Merge",
+  "cvss": 7.0,
+  "epss": 0.01041,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.2"
+  ],
+  "risk": 14.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-3g43-6gmg-66jw",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "tough-cookie@2.5.0",
+  "vuln": "GHSA-72xf-g2v4-qvf3",
+  "cve": "CVE-2023-26136",
+  "summary": "tough-cookie Prototype Pollution vulnerability",
+  "cvss": 6.5,
+  "epss": 0.02627,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > jest-environment-jsdom-fourteen@1.0.1 > jsdom@14.1.0 > tough-cookie@2.5.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "jest-environment-jsdom-fourteen@1.0.1",
+   "jsdom@14.1.0",
+   "tough-cookie@2.5.0"
+  ],
+  "fixed": [
+   "4.1.3"
+  ],
+  "risk": 14.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-72xf-g2v4-qvf3",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-f23m-r3pf-42rh",
+  "cve": "CVE-2025-13465",
+  "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+  "cvss": 6.5,
+  "epss": 0.0185,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-01",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.18.0"
+  ],
+  "risk": 14.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-f23m-r3pf-42rh",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-xxjr-mmjv-4gpg",
+  "cve": "CVE-2025-13465",
+  "summary": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions",
+  "cvss": 6.5,
+  "epss": 0.0185,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-01",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.17.23"
+  ],
+  "risk": 14.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-xxjr-mmjv-4gpg",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-f23m-r3pf-42rh",
+  "cve": "CVE-2025-13465",
+  "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+  "cvss": 6.5,
+  "epss": 0.0185,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-02",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.18.0"
+  ],
+  "risk": 14.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-f23m-r3pf-42rh",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-xxjr-mmjv-4gpg",
+  "cve": "CVE-2025-13465",
+  "summary": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions",
+  "cvss": 6.5,
+  "epss": 0.0185,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-02",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.17.23"
+  ],
+  "risk": 14.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-xxjr-mmjv-4gpg",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-f23m-r3pf-42rh",
+  "cve": "CVE-2025-13465",
+  "summary": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+  "cvss": 6.5,
+  "epss": 0.0185,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-03",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.18.0"
+  ],
+  "risk": 14.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-f23m-r3pf-42rh",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-xxjr-mmjv-4gpg",
+  "cve": "CVE-2025-13465",
+  "summary": "Lodash has Prototype Pollution Vulnerability in `_.unset` and `_.omit` functions",
+  "cvss": 6.5,
+  "epss": 0.0185,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-03",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.17.23"
+  ],
+  "risk": 14.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-xxjr-mmjv-4gpg",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-m7pr-hjqh-92cm",
+  "cve": "CVE-2026-42038",
+  "summary": "Axios: no_proxy bypass via IP alias allows SSRF",
+  "cvss": 6.8,
+  "epss": 0.00381,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 13.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-m7pr-hjqh-92cm",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-m7pr-hjqh-92cm",
+  "cve": "CVE-2026-42038",
+  "summary": "Axios: no_proxy bypass via IP alias allows SSRF",
+  "cvss": 6.8,
+  "epss": 0.00381,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 13.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-m7pr-hjqh-92cm",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-29mw-wpgm-hmr9",
+  "cve": "CVE-2020-28500",
+  "summary": "Regular Expression Denial of Service (ReDoS) in lodash",
+  "cvss": 5.3,
+  "epss": 0.07336,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-01",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.17.21"
+  ],
+  "risk": 13.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-29mw-wpgm-hmr9",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-29mw-wpgm-hmr9",
+  "cve": "CVE-2020-28500",
+  "summary": "Regular Expression Denial of Service (ReDoS) in lodash",
+  "cvss": 5.3,
+  "epss": 0.07336,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-02",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.17.21"
+  ],
+  "risk": 13.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-29mw-wpgm-hmr9",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "lodash@4.17.15",
+  "vuln": "GHSA-29mw-wpgm-hmr9",
+  "cve": "CVE-2020-28500",
+  "summary": "Regular Expression Denial of Service (ReDoS) in lodash",
+  "cvss": 5.3,
+  "epss": 0.07336,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "lodash@4.17.15",
+  "path": [
+   "app-03",
+   "lodash@4.17.15"
+  ],
+  "fixed": [
+   "4.17.21"
+  ],
+  "risk": 13.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-29mw-wpgm-hmr9",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-wf5p-g6vw-rhxx",
+  "cve": "CVE-2023-45857",
+  "summary": "Axios Cross-Site Request Forgery Vulnerability",
+  "cvss": 6.5,
+  "epss": 0.00556,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.28.0",
+   "1.6.0"
+  ],
+  "risk": 13.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-wf5p-g6vw-rhxx",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-wf5p-g6vw-rhxx",
+  "cve": "CVE-2023-45857",
+  "summary": "Axios Cross-Site Request Forgery Vulnerability",
+  "cvss": 6.5,
+  "epss": 0.00556,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.28.0",
+   "1.6.0"
+  ],
+  "risk": 13.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-wf5p-g6vw-rhxx",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "webpack-dev-server@3.10.3",
+  "vuln": "GHSA-9jgg-88mc-972h",
+  "cve": "CVE-2025-30360",
+  "summary": "webpack-dev-server users' source code may be stolen when they access a malicious web site with non-Chromium based browser",
+  "cvss": 6.5,
+  "epss": 0.00342,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3"
+  ],
+  "fixed": [
+   "5.2.1"
+  ],
+  "risk": 13.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-9jgg-88mc-972h",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "react-dev-utils@10.2.1",
+  "vuln": "GHSA-5q6m-3h65-w53x",
+  "cve": "CVE-2021-24033",
+  "summary": "react-dev-utils OS Command Injection in function `getProcessForPort`",
+  "cvss": 5.6,
+  "epss": 0.03289,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1"
+  ],
+  "fixed": [
+   "11.0.4"
+  ],
+  "risk": 12.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-5q6m-3h65-w53x",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "@babel/runtime@7.9.0",
+  "vuln": "GHSA-968p-4wvh-cqc8",
+  "cve": "CVE-2025-27789",
+  "summary": "Babel has inefficient RegExp complexity in generated code with .replace when transpiling named capturing groups",
+  "cvss": 6.2,
+  "epss": 0.00563,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > babel-preset-react-app@9.1.2 > @babel/runtime@7.9.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "babel-preset-react-app@9.1.2",
+   "@babel/runtime@7.9.0"
+  ],
+  "fixed": [
+   "7.26.10",
+   "8.0.0-alpha.17"
+  ],
+  "risk": 12.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-968p-4wvh-cqc8",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "sockjs@0.3.19",
+  "vuln": "GHSA-c9g6-9335-x697",
+  "cve": "CVE-2020-7693",
+  "summary": "Improper Input Validation in SocksJS-Node",
+  "cvss": 5.3,
+  "epss": 0.04978,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > sockjs@0.3.19",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "sockjs@0.3.19"
+  ],
+  "fixed": [
+   "0.3.20"
+  ],
+  "risk": 12.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-c9g6-9335-x697",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-8fr3-hfg3-gpgp",
+  "cve": "CVE-2022-0122",
+  "summary": "Open Redirect in node-forge",
+  "cvss": 6.1,
+  "epss": 0.00839,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.0.0"
+  ],
+  "risk": 12.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-8fr3-hfg3-gpgp",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "request@2.88.2",
+  "vuln": "GHSA-p8p7-x288-28g6",
+  "cve": "CVE-2023-28155",
+  "summary": "Server-Side Request Forgery in Request",
+  "cvss": 6.1,
+  "epss": 0.00719,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > jest-environment-jsdom-fourteen@1.0.1 > jsdom@14.1.0 > request@2.88.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "jest-environment-jsdom-fourteen@1.0.1",
+   "jsdom@14.1.0",
+   "request@2.88.2"
+  ],
+  "fixed": [],
+  "risk": 12.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-p8p7-x288-28g6",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "validator@10.11.0",
+  "vuln": "GHSA-9965-vmph-33xx",
+  "cve": "CVE-2025-56200",
+  "summary": "validator.js has a URL validation bypass vulnerability in its isURL function",
+  "cvss": 6.1,
+  "epss": 0.00324,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "sequelize@5.21.0 > validator@10.11.0",
+  "path": [
+   "app-01",
+   "sequelize@5.21.0",
+   "validator@10.11.0"
+  ],
+  "fixed": [
+   "13.15.20"
+  ],
+  "risk": 12.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-9965-vmph-33xx",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "validator@10.11.0",
+  "vuln": "GHSA-9965-vmph-33xx",
+  "cve": "CVE-2025-56200",
+  "summary": "validator.js has a URL validation bypass vulnerability in its isURL function",
+  "cvss": 6.1,
+  "epss": 0.00324,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "sequelize@5.21.0 > validator@10.11.0",
+  "path": [
+   "app-02",
+   "sequelize@5.21.0",
+   "validator@10.11.0"
+  ],
+  "fixed": [
+   "13.15.20"
+  ],
+  "risk": 12.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-9965-vmph-33xx",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "svgo@1.3.2",
+  "vuln": "GHSA-4vpr-x523-8j87",
+  "cve": "CVE-2026-84369",
+  "summary": "SVGO: removeScripts incompletely sanitizes executable HTML in SVG foreignObject elements",
+  "cvss": 6.1,
+  "epss": 0.0043,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > @svgr/webpack@4.3.3 > @svgr/plugin-svgo@4.3.1 > svgo@1.3.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "@svgr/webpack@4.3.3",
+   "@svgr/plugin-svgo@4.3.1",
+   "svgo@1.3.2"
+  ],
+  "fixed": [
+   "2.8.4",
+   "3.3.5",
+   "4.1.0"
+  ],
+  "risk": 12.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-4vpr-x523-8j87",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss@7.0.39",
+  "vuln": "GHSA-qx2v-qp2m-jg93",
+  "cve": "CVE-2026-41305",
+  "summary": "PostCSS has XSS via Unescaped </style> in its CSS Stringify Output",
+  "cvss": 6.1,
+  "epss": 0.00263,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > css-loader@3.4.2 > postcss@7.0.39",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "css-loader@3.4.2",
+   "postcss@7.0.39"
+  ],
+  "fixed": [
+   "8.5.10"
+  ],
+  "risk": 12.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-qx2v-qp2m-jg93",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss@7.0.21",
+  "vuln": "GHSA-qx2v-qp2m-jg93",
+  "cve": "CVE-2026-41305",
+  "summary": "PostCSS has XSS via Unescaped </style> in its CSS Stringify Output",
+  "cvss": 6.1,
+  "epss": 0.00263,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > postcss@7.0.21",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "resolve-url-loader@3.1.1",
+   "postcss@7.0.21"
+  ],
+  "fixed": [
+   "8.5.10"
+  ],
+  "risk": 12.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-qx2v-qp2m-jg93",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss@7.0.21",
+  "vuln": "GHSA-hwj9-h5mp-3pm3",
+  "cve": "CVE-2021-23368",
+  "summary": "Regular Expression Denial of Service in postcss",
+  "cvss": 5.3,
+  "epss": 0.03511,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > postcss@7.0.21",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "resolve-url-loader@3.1.1",
+   "postcss@7.0.21"
+  ],
+  "fixed": [
+   "7.0.36",
+   "8.2.10"
+  ],
+  "risk": 12.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-hwj9-h5mp-3pm3",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "object-path@0.11.4",
+  "vuln": "GHSA-v39p-96qg-c8rf",
+  "cve": "CVE-2021-23434",
+  "summary": "Prototype Pollution in object-path",
+  "cvss": 5.6,
+  "epss": 0.01902,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > adjust-sourcemap-loader@2.0.0 > object-path@0.11.4",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "resolve-url-loader@3.1.1",
+   "adjust-sourcemap-loader@2.0.0",
+   "object-path@0.11.4"
+  ],
+  "fixed": [
+   "0.11.6"
+  ],
+  "risk": 12.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-v39p-96qg-c8rf",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss-selector-parser@5.0.0",
+  "vuln": "GHSA-rj75-hqrm-r3gf",
+  "cve": "CVE-2026-104844",
+  "summary": "PostCSS: Quadratic complexity in flat selector parsing allows CPU exhaustion",
+  "cvss": 5.9,
+  "epss": 0.00394,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > postcss-preset-env@6.7.0 > css-has-pseudo@0.10.0 > postcss-selector-parser@5.0.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "postcss-preset-env@6.7.0",
+   "css-has-pseudo@0.10.0",
+   "postcss-selector-parser@5.0.0"
+  ],
+  "fixed": [
+   "7.1.6"
+  ],
+  "risk": 12.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-rj75-hqrm-r3gf",
+  "instances": 4
+ },
+ {
+  "project": "app-03",
+  "package": "postcss-selector-parser@6.1.4",
+  "vuln": "GHSA-rj75-hqrm-r3gf",
+  "cve": "CVE-2026-104844",
+  "summary": "PostCSS: Quadratic complexity in flat selector parsing allows CPU exhaustion",
+  "cvss": 5.9,
+  "epss": 0.00394,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > postcss-preset-env@6.7.0 > postcss-attribute-case-insensitive@4.0.2 > postcss-selector-parser@6.1.4",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "postcss-preset-env@6.7.0",
+   "postcss-attribute-case-insensitive@4.0.2",
+   "postcss-selector-parser@6.1.4"
+  ],
+  "fixed": [
+   "7.1.6"
+  ],
+  "risk": 12.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-rj75-hqrm-r3gf",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss-selector-parser@3.1.2",
+  "vuln": "GHSA-rj75-hqrm-r3gf",
+  "cve": "CVE-2026-104844",
+  "summary": "PostCSS: Quadratic complexity in flat selector parsing allows CPU exhaustion",
+  "cvss": 5.9,
+  "epss": 0.00394,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 6,
+  "via": "react-scripts@3.4.1 > optimize-css-assets-webpack-plugin@5.0.3 > cssnano@4.1.11 > cssnano-preset-default@4.0.8 > postcss-merge-rules@4.0.3 > postcss-selector-parser@3.1.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "optimize-css-assets-webpack-plugin@5.0.3",
+   "cssnano@4.1.11",
+   "cssnano-preset-default@4.0.8",
+   "postcss-merge-rules@4.0.3",
+   "postcss-selector-parser@3.1.2"
+  ],
+  "fixed": [
+   "7.1.6"
+  ],
+  "risk": 12.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-rj75-hqrm-r3gf",
+  "instances": 3
+ },
+ {
+  "project": "app-03",
+  "package": "node-notifier@5.4.5",
+  "vuln": "GHSA-5fw9-fq32-wv5p",
+  "cve": "CVE-2020-7789",
+  "summary": "OS Command Injection in node-notifier",
+  "cvss": 5.6,
+  "epss": 0.01594,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 6,
+  "via": "react-scripts@3.4.1 > jest@24.9.0 > jest-cli@24.9.0 > @jest/core@24.9.0 > @jest/reporters@24.9.0 > node-notifier@5.4.5",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "jest@24.9.0",
+   "jest-cli@24.9.0",
+   "@jest/core@24.9.0",
+   "@jest/reporters@24.9.0",
+   "node-notifier@5.4.5"
+  ],
+  "fixed": [
+   "8.0.1"
+  ],
+  "risk": 11.9,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-5fw9-fq32-wv5p",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss@7.0.21",
+  "vuln": "GHSA-566m-qj78-rww5",
+  "cve": "CVE-2021-23382",
+  "summary": "Regular Expression Denial of Service in postcss",
+  "cvss": 5.3,
+  "epss": 0.02557,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > postcss@7.0.21",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "resolve-url-loader@3.1.1",
+   "postcss@7.0.21"
+  ],
+  "fixed": [
+   "7.0.36",
+   "8.2.13"
+  ],
+  "risk": 11.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-566m-qj78-rww5",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "browserslist@4.10.0",
+  "vuln": "GHSA-w8qv-6jwh-64r5",
+  "cve": "CVE-2021-23364",
+  "summary": "Regular Expression Denial of Service in browserslist",
+  "cvss": 5.3,
+  "epss": 0.02449,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > browserslist@4.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "react-dev-utils@10.2.1",
+   "browserslist@4.10.0"
+  ],
+  "fixed": [
+   "4.16.5"
+  ],
+  "risk": 11.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-w8qv-6jwh-64r5",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "validator@10.11.0",
+  "vuln": "GHSA-qgmg-gppg-76g5",
+  "cve": "CVE-2021-3765",
+  "summary": "Inefficient Regular Expression Complexity in validator.js",
+  "cvss": 5.3,
+  "epss": 0.01777,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "sequelize@5.21.0 > validator@10.11.0",
+  "path": [
+   "app-01",
+   "sequelize@5.21.0",
+   "validator@10.11.0"
+  ],
+  "fixed": [
+   "13.7.0"
+  ],
+  "risk": 11.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-qgmg-gppg-76g5",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "validator@10.11.0",
+  "vuln": "GHSA-qgmg-gppg-76g5",
+  "cve": "CVE-2021-3765",
+  "summary": "Inefficient Regular Expression Complexity in validator.js",
+  "cvss": 5.3,
+  "epss": 0.01777,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "sequelize@5.21.0 > validator@10.11.0",
+  "path": [
+   "app-02",
+   "sequelize@5.21.0",
+   "validator@10.11.0"
+  ],
+  "fixed": [
+   "13.7.0"
+  ],
+  "risk": 11.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-qgmg-gppg-76g5",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "elliptic@6.6.1",
+  "vuln": "GHSA-848j-6mx2-7j84",
+  "cve": "CVE-2025-14505",
+  "summary": "Elliptic Uses a Cryptographic Primitive with a Risky Implementation",
+  "cvss": 5.6,
+  "epss": 0.0018,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 6,
+  "via": "react-scripts@3.4.1 > webpack@4.42.0 > node-libs-browser@2.2.1 > crypto-browserify@3.12.1 > browserify-sign@4.2.6 > elliptic@6.6.1",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack@4.42.0",
+   "node-libs-browser@2.2.1",
+   "crypto-browserify@3.12.1",
+   "browserify-sign@4.2.6",
+   "elliptic@6.6.1"
+  ],
+  "fixed": [],
+  "risk": 11.3,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-848j-6mx2-7j84",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-mmx7-hfxf-jppx",
+  "cve": "CVE-2026-67316",
+  "summary": "Axios: Prototype pollution gadgets can alter axios request construction",
+  "cvss": 5.5,
+  "epss": 0.00424,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.33.0",
+   "1.18.0"
+  ],
+  "risk": 11.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-mmx7-hfxf-jppx",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-mmx7-hfxf-jppx",
+  "cve": "CVE-2026-67316",
+  "summary": "Axios: Prototype pollution gadgets can alter axios request construction",
+  "cvss": 5.5,
+  "epss": 0.00424,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.33.0",
+   "1.18.0"
+  ],
+  "risk": 11.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-mmx7-hfxf-jppx",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "http-proxy-middleware@0.19.1",
+  "vuln": "GHSA-64mm-vxmg-q3vj",
+  "cve": "CVE-2026-55602",
+  "summary": "http-proxy-middleware `router` host+path substring matching allows Host-header-driven backend routing bypass",
+  "cvss": 5.5,
+  "epss": 0.00378,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > http-proxy-middleware@0.19.1",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "http-proxy-middleware@0.19.1"
+  ],
+  "fixed": [
+   "2.0.10",
+   "3.0.6",
+   "4.1.0"
+  ],
+  "risk": 11.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-64mm-vxmg-q3vj",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "micromatch@3.1.10",
+  "vuln": "GHSA-952p-6rrq-rcjv",
+  "cve": "CVE-2024-4067",
+  "summary": "Regular Expression Denial of Service (ReDoS) in micromatch",
+  "cvss": 5.3,
+  "epss": 0.01429,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > webpack@4.42.0 > micromatch@3.1.10",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack@4.42.0",
+   "micromatch@3.1.10"
+  ],
+  "fixed": [
+   "4.0.8"
+  ],
+  "risk": 11.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-952p-6rrq-rcjv",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss@7.0.39",
+  "vuln": "GHSA-fxqj-rqcc-2cmp",
+  "cve": "CVE-2026-69153",
+  "summary": "PostCSS: incomplete fix of GHSA-6g55-p6wh-862q \u2014 attacker-controlled sourceMappingURL reads arbitrary .map files when `from` is unset",
+  "cvss": 5.5,
+  "epss": 0.00451,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > css-loader@3.4.2 > postcss@7.0.39",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "css-loader@3.4.2",
+   "postcss@7.0.39"
+  ],
+  "fixed": [
+   "8.5.23"
+  ],
+  "risk": 11.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-fxqj-rqcc-2cmp",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss@7.0.21",
+  "vuln": "GHSA-fxqj-rqcc-2cmp",
+  "cve": "CVE-2026-69153",
+  "summary": "PostCSS: incomplete fix of GHSA-6g55-p6wh-862q \u2014 attacker-controlled sourceMappingURL reads arbitrary .map files when `from` is unset",
+  "cvss": 5.5,
+  "epss": 0.00451,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > postcss@7.0.21",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "resolve-url-loader@3.1.1",
+   "postcss@7.0.21"
+  ],
+  "fixed": [
+   "8.5.23"
+  ],
+  "risk": 11.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-fxqj-rqcc-2cmp",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "decode-uri-component@0.2.2",
+  "vuln": "GHSA-vcc3-ghjq-m6fr",
+  "cve": "CVE-2026-45822",
+  "summary": "decode-uri-component: Denial of service via exponential decoding of malformed percent-encoded input",
+  "cvss": 5.5,
+  "epss": 0.00507,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 6,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > rework@1.0.1 > css@2.2.4 > source-map-resolve@0.5.3 > decode-uri-component@0.2.2",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "resolve-url-loader@3.1.1",
+   "rework@1.0.1",
+   "css@2.2.4",
+   "source-map-resolve@0.5.3",
+   "decode-uri-component@0.2.2"
+  ],
+  "fixed": [
+   "0.5.0"
+  ],
+  "risk": 11.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-vcc3-ghjq-m6fr",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-7q8q-rj6j-mhjq",
+  "cve": "CVE-2026-67319",
+  "summary": "Axios: Nested axios option objects can consume polluted prototype values",
+  "cvss": 5.5,
+  "epss": 0.00318,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.33.0",
+   "1.18.0"
+  ],
+  "risk": 11.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-7q8q-rj6j-mhjq",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-7q8q-rj6j-mhjq",
+  "cve": "CVE-2026-67319",
+  "summary": "Axios: Nested axios option objects can consume polluted prototype values",
+  "cvss": 5.5,
+  "epss": 0.00318,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.33.0",
+   "1.18.0"
+  ],
+  "risk": 11.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-7q8q-rj6j-mhjq",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-65ch-62r8-g69g",
+  "cve": "CVE-2025-66030",
+  "summary": "node-forge is vulnerable to ASN.1 OID Integer Truncation",
+  "cvss": 5.5,
+  "epss": 0.00318,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.3.2"
+  ],
+  "risk": 11.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-65ch-62r8-g69g",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss@7.0.39",
+  "vuln": "GHSA-7fh5-64p2-3v2j",
+  "cve": "CVE-2023-44270",
+  "summary": "PostCSS line return parsing error",
+  "cvss": 5.3,
+  "epss": 0.00973,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > css-loader@3.4.2 > postcss@7.0.39",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "css-loader@3.4.2",
+   "postcss@7.0.39"
+  ],
+  "fixed": [
+   "8.4.31"
+  ],
+  "risk": 11.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-7fh5-64p2-3v2j",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "postcss@7.0.21",
+  "vuln": "GHSA-7fh5-64p2-3v2j",
+  "cve": "CVE-2023-44270",
+  "summary": "PostCSS line return parsing error",
+  "cvss": 5.3,
+  "epss": 0.00973,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 3,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > postcss@7.0.21",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "resolve-url-loader@3.1.1",
+   "postcss@7.0.21"
+  ],
+  "fixed": [
+   "8.4.31"
+  ],
+  "risk": 11.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-7fh5-64p2-3v2j",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-2r2c-g63r-vccr",
+  "cve": "CVE-2022-24773",
+  "summary": "Improper Verification of Cryptographic Signature in `node-forge`",
+  "cvss": 5.3,
+  "epss": 0.00956,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.3.0"
+  ],
+  "risk": 11.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-2r2c-g63r-vccr",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-xx6v-rp6x-q39c",
+  "cve": "CVE-2026-42042",
+  "summary": "Axios: XSRF Token Cross-Origin Leakage via Prototype Pollution Gadget in `withXSRFToken` Boolean Coercion",
+  "cvss": 5.4,
+  "epss": 0.00324,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 10.9,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-xx6v-rp6x-q39c",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-xx6v-rp6x-q39c",
+  "cve": "CVE-2026-42042",
+  "summary": "Axios: XSRF Token Cross-Origin Leakage via Prototype Pollution Gadget in `withXSRFToken` Boolean Coercion",
+  "cvss": 5.4,
+  "epss": 0.00324,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 10.9,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-xx6v-rp6x-q39c",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-5c9x-8gcm-mpgx",
+  "cve": "CVE-2026-42034",
+  "summary": "Axios' HTTP adapter-streamed uploads bypass maxBodyLength when maxRedirects: 0",
+  "cvss": 5.3,
+  "epss": 0.0048,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 10.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-5c9x-8gcm-mpgx",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-vf2m-468p-8v99",
+  "cve": "CVE-2026-42036",
+  "summary": "Axios: HTTP adapter streamed responses bypass maxContentLength",
+  "cvss": 5.3,
+  "epss": 0.0048,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 10.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-vf2m-468p-8v99",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "sequelize@5.21.0",
+  "vuln": "GHSA-8c25-f3mj-v6h8",
+  "cve": "CVE-2023-22580",
+  "summary": "Sequelize information disclosure vulnerability",
+  "cvss": 5.3,
+  "epss": 0.00582,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "sequelize@5.21.0",
+  "path": [
+   "app-01",
+   "sequelize@5.21.0"
+  ],
+  "fixed": [
+   "6.28.1"
+  ],
+  "risk": 10.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-8c25-f3mj-v6h8",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "sequelize@5.21.0",
+  "vuln": "GHSA-8c25-f3mj-v6h8",
+  "cve": "CVE-2023-22580",
+  "summary": "Sequelize information disclosure vulnerability",
+  "cvss": 5.3,
+  "epss": 0.00582,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "sequelize@5.21.0",
+  "path": [
+   "app-02",
+   "sequelize@5.21.0"
+  ],
+  "fixed": [
+   "6.28.1"
+  ],
+  "risk": 10.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-8c25-f3mj-v6h8",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-5c9x-8gcm-mpgx",
+  "cve": "CVE-2026-42034",
+  "summary": "Axios' HTTP adapter-streamed uploads bypass maxBodyLength when maxRedirects: 0",
+  "cvss": 5.3,
+  "epss": 0.0048,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 10.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-5c9x-8gcm-mpgx",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-vf2m-468p-8v99",
+  "cve": "CVE-2026-42036",
+  "summary": "Axios: HTTP adapter streamed responses bypass maxContentLength",
+  "cvss": 5.3,
+  "epss": 0.0048,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 10.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-vf2m-468p-8v99",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "webpack-dev-server@3.10.3",
+  "vuln": "GHSA-4v9v-hfq4-rm2v",
+  "cve": "CVE-2025-30359",
+  "summary": "webpack-dev-server users' source code may be stolen when they access a malicious web site",
+  "cvss": 5.3,
+  "epss": 0.00573,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3"
+  ],
+  "fixed": [
+   "5.2.1"
+  ],
+  "risk": 10.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-4v9v-hfq4-rm2v",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "webpack-dev-server@3.10.3",
+  "vuln": "GHSA-m28w-2pqf-7qgj",
+  "cve": "CVE-2026-14631",
+  "summary": "webpack-dev-server vulnerable to denial of service via a malformed Host or Origin header",
+  "cvss": 5.3,
+  "epss": 0.00517,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3"
+  ],
+  "fixed": [
+   "5.2.6"
+  ],
+  "risk": 10.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-m28w-2pqf-7qgj",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "yargs-parser@11.1.1",
+  "vuln": "GHSA-p9pc-299p-vxgp",
+  "cve": "CVE-2020-7608",
+  "summary": "yargs-parser Vulnerable to Prototype Pollution",
+  "cvss": 5.3,
+  "epss": 0.00514,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > yargs@12.0.5 > yargs-parser@11.1.1",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "yargs@12.0.5",
+   "yargs-parser@11.1.1"
+  ],
+  "fixed": [
+   "13.1.2",
+   "15.0.1",
+   "18.1.1",
+   "5.0.1"
+  ],
+  "risk": 10.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-p9pc-299p-vxgp",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "qs@6.5.5",
+  "vuln": "GHSA-4mjr-xmp4-gh2g",
+  "cve": "CVE-2026-82417",
+  "summary": "qs: Denial of Service via Attacker Controlled isBuffer",
+  "cvss": 5.3,
+  "epss": 0.00418,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 5,
+  "via": "react-scripts@3.4.1 > jest-environment-jsdom-fourteen@1.0.1 > jsdom@14.1.0 > request@2.88.2 > qs@6.5.5",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "jest-environment-jsdom-fourteen@1.0.1",
+   "jsdom@14.1.0",
+   "request@2.88.2",
+   "qs@6.5.5"
+  ],
+  "fixed": [
+   "6.16.0"
+  ],
+  "risk": 10.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-4mjr-xmp4-gh2g",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "sprintf-js@1.0.3",
+  "vuln": "GHSA-hp3w-g68c-fv3c",
+  "cve": "CVE-2026-97058",
+  "summary": "sprintf-js vulnerable to denial of service through unbounded precision specifiers",
+  "cvss": 5.3,
+  "epss": 0.00366,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 5,
+  "via": "react-scripts@3.4.1 > eslint@6.8.0 > js-yaml@3.15.2 > argparse@1.0.10 > sprintf-js@1.0.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "eslint@6.8.0",
+   "js-yaml@3.15.2",
+   "argparse@1.0.10",
+   "sprintf-js@1.0.3"
+  ],
+  "fixed": [],
+  "risk": 10.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-hp3w-g68c-fv3c",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "webpack-dev-server@3.10.3",
+  "vuln": "GHSA-79cf-xcqc-c78w",
+  "cve": "CVE-2026-6402",
+  "summary": "webpack-dev-server vulnerable to cross-origin source code exposure on non-HTTPS origins",
+  "cvss": 5.3,
+  "epss": 0.00352,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3"
+  ],
+  "fixed": [
+   "5.2.4"
+  ],
+  "risk": 10.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-79cf-xcqc-c78w",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "webpack-dev-server@3.10.3",
+  "vuln": "GHSA-mx8g-39q3-5c79",
+  "cve": "CVE-2026-9595",
+  "summary": "webpack-dev-server vulnerable to HMR WebSocket interception via permissive user proxies",
+  "cvss": 5.3,
+  "epss": 0.00233,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3"
+  ],
+  "fixed": [
+   "5.2.5"
+  ],
+  "risk": 10.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-mx8g-39q3-5c79",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-3p68-rc4w-qgx5",
+  "cve": "CVE-2025-62718",
+  "summary": "Axios has a NO_PROXY Hostname Normalization Bypass that Leads to SSRF",
+  "cvss": 4.8,
+  "epss": 0.01186,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.0",
+   "1.15.0"
+  ],
+  "risk": 10.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-3p68-rc4w-qgx5",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-fvcv-3m26-pcqx",
+  "cve": "CVE-2026-40175",
+  "summary": "Axios has Unrestricted Cloud Metadata Exfiltration via Header Injection Chain",
+  "cvss": 4.8,
+  "epss": 0.01307,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.0",
+   "1.15.0"
+  ],
+  "risk": 10.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-fvcv-3m26-pcqx",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-3p68-rc4w-qgx5",
+  "cve": "CVE-2025-62718",
+  "summary": "Axios has a NO_PROXY Hostname Normalization Bypass that Leads to SSRF",
+  "cvss": 4.8,
+  "epss": 0.01186,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.0",
+   "1.15.0"
+  ],
+  "risk": 10.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-3p68-rc4w-qgx5",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-fvcv-3m26-pcqx",
+  "cve": "CVE-2026-40175",
+  "summary": "Axios has Unrestricted Cloud Metadata Exfiltration via Header Injection Chain",
+  "cvss": 4.8,
+  "epss": 0.01307,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.0",
+   "1.15.0"
+  ],
+  "risk": 10.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-fvcv-3m26-pcqx",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "passport@0.4.0",
+  "vuln": "GHSA-v923-w3x8-wh69",
+  "cve": "CVE-2022-25896",
+  "summary": "Passport vulnerable to session regeneration when a users logs in or out",
+  "cvss": 4.8,
+  "epss": 0.0109,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "passport@0.4.0",
+  "path": [
+   "app-02",
+   "passport@0.4.0"
+  ],
+  "fixed": [
+   "0.6.0"
+  ],
+  "risk": 10.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-v923-w3x8-wh69",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-w9j2-pvgh-6h63",
+  "cve": "CVE-2026-42041",
+  "summary": "Axios: Authentication Bypass via Prototype Pollution Gadget in `validateStatus` Merge Strategy",
+  "cvss": 4.8,
+  "epss": 0.0081,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 9.9,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-w9j2-pvgh-6h63",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-w9j2-pvgh-6h63",
+  "cve": "CVE-2026-42041",
+  "summary": "Axios: Authentication Bypass via Prototype Pollution Gadget in `validateStatus` Merge Strategy",
+  "cvss": 4.8,
+  "epss": 0.0081,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 9.9,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-w9j2-pvgh-6h63",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-898c-q2cr-xwhg",
+  "cve": "CVE-2026-44490",
+  "summary": "axios has DoS & Header Injection via Prototype Pollution Read-Side Gadgets in axios merge functions",
+  "cvss": 4.8,
+  "epss": 0.00403,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.32.0",
+   "1.16.0"
+  ],
+  "risk": 9.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-898c-q2cr-xwhg",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-898c-q2cr-xwhg",
+  "cve": "CVE-2026-44490",
+  "summary": "axios has DoS & Header Injection via Prototype Pollution Read-Side Gadgets in axios merge functions",
+  "cvss": 4.8,
+  "epss": 0.00403,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.32.0",
+   "1.16.0"
+  ],
+  "risk": 9.8,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-898c-q2cr-xwhg",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-7rx3-28cr-v5wh",
+  "cve": null,
+  "summary": "Handlebars.js has a Prototype Method Access Control Gap via Missing __lookupSetter__ Blocklist Entry",
+  "cvss": 4.8,
+  "epss": 0.0,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.9"
+  ],
+  "risk": 9.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-7rx3-28cr-v5wh",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "webpack-dev-server@3.10.3",
+  "vuln": "GHSA-f5vj-f2hx-8m93",
+  "cve": "CVE-2026-14620",
+  "summary": "webpack-dev-server vulnerable to cross-site request forgery via internal developer endpoints",
+  "cvss": 4.7,
+  "epss": 0.00521,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3"
+  ],
+  "fixed": [
+   "5.2.6"
+  ],
+  "risk": 9.6,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-f5vj-f2hx-8m93",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-2qvq-rjwj-gvw9",
+  "cve": "CVE-2026-33916",
+  "summary": "Handlebars.js has Prototype Pollution Leading to XSS through Partial Template Injection",
+  "cvss": 4.7,
+  "epss": 0.00382,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.9"
+  ],
+  "risk": 9.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-2qvq-rjwj-gvw9",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-xw65-4hp5-5hc7",
+  "cve": "CVE-2026-106444",
+  "summary": "Handlebars: JavaScript Injection via Unsafe Inline Embedding of Precompiled Templates",
+  "cvss": 4.7,
+  "epss": 0.00294,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.10"
+  ],
+  "risk": 9.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-xw65-4hp5-5hc7",
+  "instances": 1
+ },
+ {
+  "project": "app-02",
+  "package": "serialize-javascript@2.1.0",
+  "vuln": "GHSA-h9rv-jmmf-4pgx",
+  "cve": "CVE-2019-16769",
+  "summary": "Cross-Site Scripting in serialize-javascript",
+  "cvss": 4.2,
+  "epss": 0.008,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "serialize-javascript@2.1.0",
+  "path": [
+   "app-02",
+   "serialize-javascript@2.1.0"
+  ],
+  "fixed": [
+   "2.1.1"
+  ],
+  "risk": 8.7,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-h9rv-jmmf-4pgx",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "ejs@3.0.1",
+  "vuln": "GHSA-ghr5-ch3p-vcr6",
+  "cve": "CVE-2024-33883",
+  "summary": "ejs lacks certain pollution protection",
+  "cvss": 4.0,
+  "epss": 0.00619,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "ejs@3.0.1",
+  "path": [
+   "app-01",
+   "ejs@3.0.1"
+  ],
+  "fixed": [
+   "3.1.10"
+  ],
+  "risk": 8.2,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-ghr5-ch3p-vcr6",
+  "instances": 1
+ },
+ {
+  "project": "app-01",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-xhjh-pmcv-23jw",
+  "cve": "CVE-2026-42040",
+  "summary": "Axios: Null Byte Injection via Reverse-Encoding in AxiosURLSearchParams",
+  "cvss": 3.7,
+  "epss": 0.00264,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-01",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 7.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-xhjh-pmcv-23jw",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "axios@0.21.1",
+  "vuln": "GHSA-xhjh-pmcv-23jw",
+  "cve": "CVE-2026-42040",
+  "summary": "Axios: Null Byte Injection via Reverse-Encoding in AxiosURLSearchParams",
+  "cvss": 3.7,
+  "epss": 0.00264,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "axios@0.21.1",
+  "path": [
+   "app-03",
+   "axios@0.21.1"
+  ],
+  "fixed": [
+   "0.31.1",
+   "1.15.1"
+  ],
+  "risk": 7.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-xhjh-pmcv-23jw",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "qs@6.5.5",
+  "vuln": "GHSA-6rw7-vpxm-498p",
+  "cve": "CVE-2025-15284",
+  "summary": "qs's arrayLimit bypass in its bracket notation allows DoS via memory exhaustion",
+  "cvss": 3.7,
+  "epss": 0.0045,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 5,
+  "via": "react-scripts@3.4.1 > jest-environment-jsdom-fourteen@1.0.1 > jsdom@14.1.0 > request@2.88.2 > qs@6.5.5",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "jest-environment-jsdom-fourteen@1.0.1",
+   "jsdom@14.1.0",
+   "request@2.88.2",
+   "qs@6.5.5"
+  ],
+  "fixed": [
+   "6.14.1"
+  ],
+  "risk": 7.5,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-6rw7-vpxm-498p",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars@4.7.6",
+  "vuln": "GHSA-442j-39wm-28r2",
+  "cve": null,
+  "summary": "Handlebars.js has a Property Access Validation Bypass in container.lookup",
+  "cvss": 3.7,
+  "epss": 0.0,
+  "kev": false,
+  "dev": false,
+  "direct": true,
+  "depth": 1,
+  "via": "handlebars@4.7.6",
+  "path": [
+   "app-03",
+   "handlebars@4.7.6"
+  ],
+  "fixed": [
+   "4.7.9"
+  ],
+  "risk": 7.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-442j-39wm-28r2",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "@babel/core@7.9.0",
+  "vuln": "GHSA-4x5r-pxfx-6jf8",
+  "cve": "CVE-2026-49356",
+  "summary": "@babel/core: Arbitrary File Read via sourceMappingURL Comment",
+  "cvss": 3.2,
+  "epss": 0.00152,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 2,
+  "via": "react-scripts@3.4.1 > @babel/core@7.9.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "@babel/core@7.9.0"
+  ],
+  "fixed": [
+   "7.29.6",
+   "8.0.0-rc.6"
+  ],
+  "risk": 6.4,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-4x5r-pxfx-6jf8",
+  "instances": 2
+ },
+ {
+  "project": "app-03",
+  "package": "tmp@0.0.33",
+  "vuln": "GHSA-52f5-9888-hmc6",
+  "cve": "CVE-2025-54798",
+  "summary": "tmp allows arbitrary temporary file / directory write via symbolic link `dir` parameter",
+  "cvss": 2.5,
+  "epss": 0.00355,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 5,
+  "via": "react-scripts@3.4.1 > eslint@6.8.0 > inquirer@7.3.3 > external-editor@3.1.0 > tmp@0.0.33",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "eslint@6.8.0",
+   "inquirer@7.3.3",
+   "external-editor@3.1.0",
+   "tmp@0.0.33"
+  ],
+  "fixed": [
+   "0.2.4"
+  ],
+  "risk": 5.1,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-52f5-9888-hmc6",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-5rrq-pxf6-6jx5",
+  "cve": null,
+  "summary": "Prototype Pollution in node-forge debug API.",
+  "cvss": 2.5,
+  "epss": 0.0,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.0.0"
+  ],
+  "risk": 5.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-5rrq-pxf6-6jx5",
+  "instances": 1
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge@0.10.0",
+  "vuln": "GHSA-gf8q-jrpm-jvxq",
+  "cve": null,
+  "summary": "URL parsing in node-forge could lead to undesired behavior.",
+  "cvss": 2.5,
+  "epss": 0.0,
+  "kev": false,
+  "dev": false,
+  "direct": false,
+  "depth": 4,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "path": [
+   "app-03",
+   "react-scripts@3.4.1",
+   "webpack-dev-server@3.10.3",
+   "selfsigned@1.10.14",
+   "node-forge@0.10.0"
+  ],
+  "fixed": [
+   "1.0.0"
+  ],
+  "risk": 5.0,
+  "osv_url": "https://osv.dev/vulnerability/GHSA-gf8q-jrpm-jvxq",
+  "instances": 1
+ }
+]

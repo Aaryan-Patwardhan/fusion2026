@@ -1,0 +1,1011 @@
+[
+ {
+  "project": "app-01",
+  "package": "axios",
+  "current": "0.21.1",
+  "target": "0.33.0",
+  "direct": true,
+  "via": "axios@0.21.1",
+  "risk_removed": 322.6,
+  "vulns": [
+   "CVE-2021-3749",
+   "CVE-2026-44492",
+   "CVE-2025-27152",
+   "CVE-2026-44487",
+   "CVE-2026-25639",
+   "CVE-2026-42039",
+   "CVE-2026-44496",
+   "CVE-2026-44486",
+   "CVE-2026-42033",
+   "CVE-2026-42035",
+   "CVE-2026-42043",
+   "CVE-2026-44495",
+   "CVE-2026-42038",
+   "CVE-2023-45857",
+   "CVE-2026-67316",
+   "CVE-2026-67319",
+   "CVE-2026-42042",
+   "CVE-2026-42034",
+   "CVE-2026-42036",
+   "CVE-2025-62718",
+   "CVE-2026-40175",
+   "CVE-2026-42041",
+   "CVE-2026-44490",
+   "CVE-2026-42040"
+  ],
+  "order": 1,
+  "action": "npm install axios@0.33.0",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-03",
+  "package": "axios",
+  "current": "0.21.1",
+  "target": "0.33.0",
+  "direct": true,
+  "via": "axios@0.21.1",
+  "risk_removed": 322.6,
+  "vulns": [
+   "CVE-2021-3749",
+   "CVE-2026-44492",
+   "CVE-2025-27152",
+   "CVE-2026-44487",
+   "CVE-2026-25639",
+   "CVE-2026-42039",
+   "CVE-2026-44496",
+   "CVE-2026-44486",
+   "CVE-2026-42033",
+   "CVE-2026-42035",
+   "CVE-2026-42043",
+   "CVE-2026-44495",
+   "CVE-2026-42038",
+   "CVE-2023-45857",
+   "CVE-2026-67316",
+   "CVE-2026-67319",
+   "CVE-2026-42042",
+   "CVE-2026-42034",
+   "CVE-2026-42036",
+   "CVE-2025-62718",
+   "CVE-2026-40175",
+   "CVE-2026-42041",
+   "CVE-2026-44490",
+   "CVE-2026-42040"
+  ],
+  "order": 2,
+  "action": "npm install axios@0.33.0",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-03",
+  "package": "handlebars",
+  "current": "4.7.6",
+  "target": "4.7.10",
+  "direct": true,
+  "via": "handlebars@4.7.6",
+  "risk_removed": 210.0,
+  "vulns": [
+   "CVE-2021-23369",
+   "CVE-2021-23383",
+   "CVE-2026-33937",
+   "CVE-2026-106446",
+   "CVE-2026-106445",
+   "CVE-2026-33938",
+   "CVE-2026-33940",
+   "CVE-2026-33941",
+   "CVE-2026-33939",
+   "GHSA-7rx3-28cr-v5wh",
+   "CVE-2026-33916",
+   "CVE-2026-106444",
+   "GHSA-442j-39wm-28r2"
+  ],
+  "order": 3,
+  "action": "npm install handlebars@4.7.10",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-03",
+  "package": "node-forge",
+  "current": "0.10.0",
+  "target": "1.4.0",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > selfsigned@1.10.14 > node-forge@0.10.0",
+  "risk_removed": 186.4,
+  "vulns": [
+   "CVE-2025-12816",
+   "CVE-2025-66031",
+   "CVE-2022-24772",
+   "CVE-2026-33891",
+   "CVE-2022-24771",
+   "CVE-2026-33894",
+   "CVE-2026-33894",
+   "CVE-2026-33895",
+   "CVE-2026-33896",
+   "CVE-2022-0122",
+   "CVE-2025-66030",
+   "CVE-2022-24773",
+   "GHSA-5rrq-pxf6-6jx5",
+   "GHSA-gf8q-jrpm-jvxq"
+  ],
+  "order": 4,
+  "action": "Major upgrade required: node-forge@0.10.0 \u2192 1.4.0. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-01",
+  "package": "lodash",
+  "current": "4.17.15",
+  "target": "4.18.0",
+  "direct": true,
+  "via": "lodash@4.17.15",
+  "risk_removed": 116.3,
+  "vulns": [
+   "CVE-2021-23337",
+   "CVE-2021-23337",
+   "CVE-2020-8203",
+   "CVE-2025-13465",
+   "CVE-2025-13465",
+   "CVE-2020-28500"
+  ],
+  "order": 5,
+  "action": "npm install lodash@4.18.0",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-02",
+  "package": "lodash",
+  "current": "4.17.15",
+  "target": "4.18.0",
+  "direct": true,
+  "via": "lodash@4.17.15",
+  "risk_removed": 116.3,
+  "vulns": [
+   "CVE-2021-23337",
+   "CVE-2021-23337",
+   "CVE-2020-8203",
+   "CVE-2025-13465",
+   "CVE-2025-13465",
+   "CVE-2020-28500"
+  ],
+  "order": 6,
+  "action": "npm install lodash@4.18.0",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-03",
+  "package": "lodash",
+  "current": "4.17.15",
+  "target": "4.18.0",
+  "direct": true,
+  "via": "lodash@4.17.15",
+  "risk_removed": 116.3,
+  "vulns": [
+   "CVE-2021-23337",
+   "CVE-2021-23337",
+   "CVE-2020-8203",
+   "CVE-2025-13465",
+   "CVE-2025-13465",
+   "CVE-2020-28500"
+  ],
+  "order": 7,
+  "action": "npm install lodash@4.18.0",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-01",
+  "package": "sequelize",
+  "current": "5.21.0",
+  "target": "6.37.4",
+  "direct": true,
+  "via": "sequelize@5.21.0",
+  "risk_removed": 93.1,
+  "vulns": [
+   "CVE-2023-25813",
+   "CVE-2023-22578",
+   "CVE-2023-22579",
+   "CVE-2026-69240",
+   "CVE-2023-22580"
+  ],
+  "order": 8,
+  "action": "Major upgrade required: sequelize@5.21.0 \u2192 6.37.4. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-02",
+  "package": "sequelize",
+  "current": "5.21.0",
+  "target": "6.37.4",
+  "direct": true,
+  "via": "sequelize@5.21.0",
+  "risk_removed": 93.1,
+  "vulns": [
+   "CVE-2023-25813",
+   "CVE-2023-22578",
+   "CVE-2023-22579",
+   "CVE-2026-69240",
+   "CVE-2023-22580"
+  ],
+  "order": 9,
+  "action": "Major upgrade required: sequelize@5.21.0 \u2192 6.37.4. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "postcss",
+  "current": "7.0.21",
+  "target": "8.5.23",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > postcss@7.0.21",
+  "risk_removed": 89.0,
+  "vulns": [
+   "CVE-2026-45623",
+   "CVE-2026-73646",
+   "CVE-2026-41305",
+   "CVE-2021-23368",
+   "CVE-2021-23382",
+   "CVE-2026-69153",
+   "CVE-2023-44270"
+  ],
+  "order": 10,
+  "action": "Major upgrade required: postcss@7.0.21 \u2192 8.5.23. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "webpack-dev-server",
+  "current": "3.10.3",
+  "target": "5.2.6",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3",
+  "risk_removed": 65.8,
+  "vulns": [
+   "CVE-2025-30360",
+   "CVE-2025-30359",
+   "CVE-2026-14631",
+   "CVE-2026-6402",
+   "CVE-2026-9595",
+   "CVE-2026-14620"
+  ],
+  "order": 11,
+  "action": "Major upgrade required: webpack-dev-server@3.10.3 \u2192 5.2.6. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "postcss",
+  "current": "7.0.39",
+  "target": "8.5.23",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > css-loader@3.4.2 > postcss@7.0.39",
+  "risk_removed": 65.2,
+  "vulns": [
+   "CVE-2026-45623",
+   "CVE-2026-73646",
+   "CVE-2026-41305",
+   "CVE-2026-69153",
+   "CVE-2023-44270"
+  ],
+  "order": 12,
+  "action": "Major upgrade required: postcss@7.0.39 \u2192 8.5.23. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "minimatch",
+  "current": "3.0.4",
+  "target": "3.1.4",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > recursive-readdir@2.2.2 > minimatch@3.0.4",
+  "risk_removed": 63.1,
+  "vulns": [
+   "CVE-2026-26996",
+   "CVE-2022-3517",
+   "CVE-2026-27903",
+   "CVE-2026-27904"
+  ],
+  "order": 13,
+  "action": "Upgrade the parent package, or add overrides: {\"minimatch\": \"3.1.4\"}",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-03",
+  "package": "shell-quote",
+  "current": "1.7.2",
+  "target": "1.9.0",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > shell-quote@1.7.2",
+  "risk_removed": 54.8,
+  "vulns": [
+   "CVE-2021-42740",
+   "CVE-2026-9277",
+   "CVE-2026-13311"
+  ],
+  "order": 14,
+  "action": "Upgrade the parent package, or add overrides: {\"shell-quote\": \"1.9.0\"}",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-03",
+  "package": "loader-utils",
+  "current": "1.2.3",
+  "target": "1.4.2",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > loader-utils@1.2.3",
+  "risk_removed": 54.8,
+  "vulns": [
+   "CVE-2022-37601",
+   "CVE-2022-37599",
+   "CVE-2022-37603"
+  ],
+  "order": 15,
+  "action": "Upgrade the parent package, or add overrides: {\"loader-utils\": \"1.4.2\"}",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-01",
+  "package": "ejs",
+  "current": "3.0.1",
+  "target": "3.1.10",
+  "direct": true,
+  "via": "ejs@3.0.1",
+  "risk_removed": 53.5,
+  "vulns": [
+   "CVE-2022-29078",
+   "CVE-2024-33883"
+  ],
+  "order": 16,
+  "action": "npm install ejs@3.1.10",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-03",
+  "package": "svgo",
+  "current": "1.3.2",
+  "target": "2.8.4",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > @svgr/webpack@4.3.3 > @svgr/plugin-svgo@4.3.1 > svgo@1.3.2",
+  "risk_removed": 45.8,
+  "vulns": [
+   "CVE-2026-73650",
+   "CVE-2026-84370",
+   "CVE-2026-84369"
+  ],
+  "order": 17,
+  "action": "Major upgrade required: svgo@1.3.2 \u2192 2.8.4. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "object-path",
+  "current": "0.11.4",
+  "target": "0.11.8",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > adjust-sourcemap-loader@2.0.0 > object-path@0.11.4",
+  "risk_removed": 44.7,
+  "vulns": [
+   "CVE-2020-15256",
+   "CVE-2021-3805",
+   "CVE-2021-23434"
+  ],
+  "order": 18,
+  "action": "Upgrade the parent package, or add overrides: {\"object-path\": \"0.11.8\"}",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-02",
+  "package": "serialize-javascript",
+  "current": "2.1.0",
+  "target": "7.0.3",
+  "direct": true,
+  "via": "serialize-javascript@2.1.0",
+  "risk_removed": 43.0,
+  "vulns": [
+   "CVE-2020-7660",
+   "GHSA-5c6j-r48x-rmvq",
+   "CVE-2019-16769"
+  ],
+  "order": 19,
+  "action": "Major upgrade required: serialize-javascript@2.1.0 \u2192 7.0.3. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "browserslist",
+  "current": "4.10.0",
+  "target": "4.28.7",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > browserslist@4.10.0",
+  "risk_removed": 42.4,
+  "vulns": [
+   "CVE-2026-73088",
+   "CVE-2026-73089",
+   "CVE-2021-23364"
+  ],
+  "order": 20,
+  "action": "Upgrade the parent package, or add overrides: {\"browserslist\": \"4.28.7\"}",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-01",
+  "package": "moment",
+  "current": "2.29.1",
+  "target": "2.29.4",
+  "direct": true,
+  "via": "moment@2.29.1",
+  "risk_removed": 41.6,
+  "vulns": [
+   "CVE-2022-24785",
+   "CVE-2022-31129"
+  ],
+  "order": 21,
+  "action": "npm install moment@2.29.4",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-01",
+  "package": "validator",
+  "current": "10.11.0",
+  "target": "13.15.22",
+  "direct": false,
+  "via": "sequelize@5.21.0 > validator@10.11.0",
+  "risk_removed": 39.1,
+  "vulns": [
+   "CVE-2025-12758",
+   "CVE-2025-56200",
+   "CVE-2021-3765"
+  ],
+  "order": 22,
+  "action": "Major upgrade required: validator@10.11.0 \u2192 13.15.22. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-02",
+  "package": "validator",
+  "current": "10.11.0",
+  "target": "13.15.22",
+  "direct": false,
+  "via": "sequelize@5.21.0 > validator@10.11.0",
+  "risk_removed": 39.1,
+  "vulns": [
+   "CVE-2025-12758",
+   "CVE-2025-56200",
+   "CVE-2021-3765"
+  ],
+  "order": 23,
+  "action": "Major upgrade required: validator@10.11.0 \u2192 13.15.22. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "form-data",
+  "current": "2.3.3",
+  "target": "2.5.6",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > jest-environment-jsdom-fourteen@1.0.1 > jsdom@14.1.0 > request@2.88.2 > form-data@2.3.3",
+  "risk_removed": 35.9,
+  "vulns": [
+   "CVE-2025-7783",
+   "CVE-2026-12143"
+  ],
+  "order": 24,
+  "action": "Upgrade the parent package, or add overrides: {\"form-data\": \"2.5.6\"}",
+  "tier": "REVIEW"
+ },
+ {
+  "project": "app-03",
+  "package": "serialize-javascript",
+  "current": "2.1.2",
+  "target": "7.0.3",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > terser-webpack-plugin@2.3.5 > serialize-javascript@2.1.2",
+  "risk_removed": 34.3,
+  "vulns": [
+   "CVE-2020-7660",
+   "GHSA-5c6j-r48x-rmvq"
+  ],
+  "order": 25,
+  "action": "Major upgrade required: serialize-javascript@2.1.2 \u2192 7.0.3. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "marked",
+  "current": "0.7.0",
+  "target": "4.0.10",
+  "direct": true,
+  "via": "marked@0.7.0",
+  "risk_removed": 33.4,
+  "vulns": [
+   "CVE-2022-21681",
+   "CVE-2022-21680"
+  ],
+  "order": 26,
+  "action": "Major upgrade required: marked@0.7.0 \u2192 4.0.10. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "flatted",
+  "current": "2.0.2",
+  "target": "3.4.2",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > eslint@6.8.0 > file-entry-cache@5.0.1 > flat-cache@2.0.1 > flatted@2.0.2",
+  "risk_removed": 32.2,
+  "vulns": [
+   "CVE-2026-33228",
+   "CVE-2026-32141"
+  ],
+  "order": 27,
+  "action": "Major upgrade required: flatted@2.0.2 \u2192 3.4.2. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "braces",
+  "current": "2.3.2",
+  "target": "3.0.3",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack@4.42.0 > micromatch@3.1.10 > braces@2.3.2",
+  "risk_removed": 31.3,
+  "vulns": [
+   "CVE-2024-4068",
+   "CVE-2026-93687"
+  ],
+  "order": 28,
+  "action": "Major upgrade required: braces@2.3.2 \u2192 3.0.3. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "webpack-dev-middleware",
+  "current": "3.7.3",
+  "target": "7.4.6",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > webpack-dev-middleware@3.7.3",
+  "risk_removed": 30.7,
+  "vulns": [
+   "CVE-2024-29180",
+   "CVE-2026-76844"
+  ],
+  "order": 29,
+  "action": "Major upgrade required: webpack-dev-middleware@3.7.3 \u2192 7.4.6. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "http-proxy-middleware",
+  "current": "0.19.1",
+  "target": "2.0.10",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > http-proxy-middleware@0.19.1",
+  "risk_removed": 26.8,
+  "vulns": [
+   "CVE-2024-21536",
+   "CVE-2026-55602"
+  ],
+  "order": 30,
+  "action": "Major upgrade required: http-proxy-middleware@0.19.1 \u2192 2.0.10. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "ip",
+  "current": "1.1.9",
+  "target": null,
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > ip@1.1.9",
+  "risk_removed": 21.6,
+  "vulns": [
+   "CVE-2024-29415"
+  ],
+  "order": 31,
+  "action": "No fixed version published \u2014 replace the package or apply a mitigation",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "tmp",
+  "current": "0.0.33",
+  "target": "0.2.6",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > eslint@6.8.0 > inquirer@7.3.3 > external-editor@3.1.0 > tmp@0.0.33",
+  "risk_removed": 21.4,
+  "vulns": [
+   "CVE-2026-44705",
+   "CVE-2025-54798"
+  ],
+  "order": 32,
+  "action": "Upgrade the parent package, or add overrides: {\"tmp\": \"0.2.6\"}",
+  "tier": "AUTO"
+ },
+ {
+  "project": "app-03",
+  "package": "qs",
+  "current": "6.5.5",
+  "target": "6.16.0",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > jest-environment-jsdom-fourteen@1.0.1 > jsdom@14.1.0 > request@2.88.2 > qs@6.5.5",
+  "risk_removed": 18.3,
+  "vulns": [
+   "CVE-2026-82417",
+   "CVE-2025-15284"
+  ],
+  "order": 33,
+  "action": "Upgrade the parent package, or add overrides: {\"qs\": \"6.16.0\"}",
+  "tier": "AUTO"
+ },
+ {
+  "project": "app-03",
+  "package": "semver",
+  "current": "6.3.0",
+  "target": "6.3.1",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > semver@6.3.0",
+  "risk_removed": 16.7,
+  "vulns": [
+   "CVE-2022-25883"
+  ],
+  "order": 34,
+  "action": "Upgrade the parent package, or add overrides: {\"semver\": \"6.3.1\"}",
+  "tier": "AUTO"
+ },
+ {
+  "project": "app-03",
+  "package": "nth-check",
+  "current": "1.0.2",
+  "target": "2.0.1",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > @svgr/webpack@4.3.3 > @svgr/plugin-svgo@4.3.1 > svgo@1.3.2 > css-select@2.1.0 > nth-check@1.0.2",
+  "risk_removed": 16.3,
+  "vulns": [
+   "CVE-2021-3803"
+  ],
+  "order": 35,
+  "action": "Major upgrade required: nth-check@1.0.2 \u2192 2.0.1. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "ansi-html",
+  "current": "0.0.7",
+  "target": "0.0.8",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > ansi-html@0.0.7",
+  "risk_removed": 16.2,
+  "vulns": [
+   "CVE-2021-23424"
+  ],
+  "order": 36,
+  "action": "Upgrade the parent package, or add overrides: {\"ansi-html\": \"0.0.8\"}",
+  "tier": "AUTO"
+ },
+ {
+  "project": "app-03",
+  "package": "serialize-javascript",
+  "current": "4.0.0",
+  "target": "7.0.3",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack@4.42.0 > terser-webpack-plugin@1.4.6 > serialize-javascript@4.0.0",
+  "risk_removed": 16.2,
+  "vulns": [
+   "GHSA-5c6j-r48x-rmvq"
+  ],
+  "order": 37,
+  "action": "Major upgrade required: serialize-javascript@4.0.0 \u2192 7.0.3. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "cross-spawn",
+  "current": "7.0.1",
+  "target": "7.0.5",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > cross-spawn@7.0.1",
+  "risk_removed": 15.5,
+  "vulns": [
+   "CVE-2024-21538"
+  ],
+  "order": 38,
+  "action": "Upgrade the parent package, or add overrides: {\"cross-spawn\": \"7.0.5\"}",
+  "tier": "AUTO"
+ },
+ {
+  "project": "app-03",
+  "package": "braces",
+  "current": "3.0.3",
+  "target": null,
+  "direct": false,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1 > fork-ts-checker-webpack-plugin@3.1.1 > chokidar@3.6.0 > braces@3.0.3",
+  "risk_removed": 15.4,
+  "vulns": [
+   "CVE-2026-93687"
+  ],
+  "order": 39,
+  "action": "No fixed version published \u2014 replace the package or apply a mitigation",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-01",
+  "package": "uuid",
+  "current": "3.4.0",
+  "target": "11.1.1",
+  "direct": false,
+  "via": "sequelize@5.21.0 > uuid@3.4.0",
+  "risk_removed": 15.2,
+  "vulns": [
+   "CVE-2026-41907"
+  ],
+  "order": 40,
+  "action": "Major upgrade required: uuid@3.4.0 \u2192 11.1.1. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-02",
+  "package": "uuid",
+  "current": "3.4.0",
+  "target": "11.1.1",
+  "direct": false,
+  "via": "sequelize@5.21.0 > uuid@3.4.0",
+  "risk_removed": 15.2,
+  "vulns": [
+   "CVE-2026-41907"
+  ],
+  "order": 41,
+  "action": "Major upgrade required: uuid@3.4.0 \u2192 11.1.1. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "uuid",
+  "current": "3.4.0",
+  "target": "11.1.1",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > sockjs@0.3.19 > uuid@3.4.0",
+  "risk_removed": 15.2,
+  "vulns": [
+   "CVE-2026-41907"
+  ],
+  "order": 42,
+  "action": "Major upgrade required: uuid@3.4.0 \u2192 11.1.1. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "tough-cookie",
+  "current": "2.5.0",
+  "target": "4.1.3",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > jest-environment-jsdom-fourteen@1.0.1 > jsdom@14.1.0 > tough-cookie@2.5.0",
+  "risk_removed": 14.4,
+  "vulns": [
+   "CVE-2023-26136"
+  ],
+  "order": 43,
+  "action": "Major upgrade required: tough-cookie@2.5.0 \u2192 4.1.3. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "react-dev-utils",
+  "current": "10.2.1",
+  "target": "11.0.4",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > react-dev-utils@10.2.1",
+  "risk_removed": 12.7,
+  "vulns": [
+   "CVE-2021-24033"
+  ],
+  "order": 44,
+  "action": "Major upgrade required: react-dev-utils@10.2.1 \u2192 11.0.4. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "@babel/runtime",
+  "current": "7.9.0",
+  "target": "7.26.10",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > babel-preset-react-app@9.1.2 > @babel/runtime@7.9.0",
+  "risk_removed": 12.7,
+  "vulns": [
+   "CVE-2025-27789"
+  ],
+  "order": 45,
+  "action": "Upgrade the parent package, or add overrides: {\"@babel/runtime\": \"7.26.10\"}",
+  "tier": "AUTO"
+ },
+ {
+  "project": "app-03",
+  "package": "sockjs",
+  "current": "0.3.19",
+  "target": "0.3.20",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > sockjs@0.3.19",
+  "risk_removed": 12.7,
+  "vulns": [
+   "CVE-2020-7693"
+  ],
+  "order": 46,
+  "action": "Upgrade the parent package, or add overrides: {\"sockjs\": \"0.3.20\"}",
+  "tier": "AUTO"
+ },
+ {
+  "project": "app-03",
+  "package": "request",
+  "current": "2.88.2",
+  "target": null,
+  "direct": false,
+  "via": "react-scripts@3.4.1 > jest-environment-jsdom-fourteen@1.0.1 > jsdom@14.1.0 > request@2.88.2",
+  "risk_removed": 12.6,
+  "vulns": [
+   "CVE-2023-28155"
+  ],
+  "order": 47,
+  "action": "No fixed version published \u2014 replace the package or apply a mitigation",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "postcss-selector-parser",
+  "current": "5.0.0",
+  "target": "7.1.6",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > postcss-preset-env@6.7.0 > css-has-pseudo@0.10.0 > postcss-selector-parser@5.0.0",
+  "risk_removed": 12.0,
+  "vulns": [
+   "CVE-2026-104844"
+  ],
+  "order": 48,
+  "action": "Major upgrade required: postcss-selector-parser@5.0.0 \u2192 7.1.6. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "postcss-selector-parser",
+  "current": "6.1.4",
+  "target": "7.1.6",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > postcss-preset-env@6.7.0 > postcss-attribute-case-insensitive@4.0.2 > postcss-selector-parser@6.1.4",
+  "risk_removed": 12.0,
+  "vulns": [
+   "CVE-2026-104844"
+  ],
+  "order": 49,
+  "action": "Major upgrade required: postcss-selector-parser@6.1.4 \u2192 7.1.6. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "postcss-selector-parser",
+  "current": "3.1.2",
+  "target": "7.1.6",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > optimize-css-assets-webpack-plugin@5.0.3 > cssnano@4.1.11 > cssnano-preset-default@4.0.8 > postcss-merge-rules@4.0.3 > postcss-selector-parser@3.1.2",
+  "risk_removed": 12.0,
+  "vulns": [
+   "CVE-2026-104844"
+  ],
+  "order": 50,
+  "action": "Major upgrade required: postcss-selector-parser@3.1.2 \u2192 7.1.6. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "node-notifier",
+  "current": "5.4.5",
+  "target": "8.0.1",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > jest@24.9.0 > jest-cli@24.9.0 > @jest/core@24.9.0 > @jest/reporters@24.9.0 > node-notifier@5.4.5",
+  "risk_removed": 11.9,
+  "vulns": [
+   "CVE-2020-7789"
+  ],
+  "order": 51,
+  "action": "Major upgrade required: node-notifier@5.4.5 \u2192 8.0.1. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "elliptic",
+  "current": "6.6.1",
+  "target": null,
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack@4.42.0 > node-libs-browser@2.2.1 > crypto-browserify@3.12.1 > browserify-sign@4.2.6 > elliptic@6.6.1",
+  "risk_removed": 11.3,
+  "vulns": [
+   "CVE-2025-14505"
+  ],
+  "order": 52,
+  "action": "No fixed version published \u2014 replace the package or apply a mitigation",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "micromatch",
+  "current": "3.1.10",
+  "target": "4.0.8",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack@4.42.0 > micromatch@3.1.10",
+  "risk_removed": 11.2,
+  "vulns": [
+   "CVE-2024-4067"
+  ],
+  "order": 53,
+  "action": "Major upgrade required: micromatch@3.1.10 \u2192 4.0.8. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "decode-uri-component",
+  "current": "0.2.2",
+  "target": "0.5.0",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > resolve-url-loader@3.1.1 > rework@1.0.1 > css@2.2.4 > source-map-resolve@0.5.3 > decode-uri-component@0.2.2",
+  "risk_removed": 11.2,
+  "vulns": [
+   "CVE-2026-45822"
+  ],
+  "order": 54,
+  "action": "Upgrade the parent package, or add overrides: {\"decode-uri-component\": \"0.5.0\"}",
+  "tier": "AUTO"
+ },
+ {
+  "project": "app-03",
+  "package": "yargs-parser",
+  "current": "11.1.1",
+  "target": "13.1.2",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > webpack-dev-server@3.10.3 > yargs@12.0.5 > yargs-parser@11.1.1",
+  "risk_removed": 10.8,
+  "vulns": [
+   "CVE-2020-7608"
+  ],
+  "order": 55,
+  "action": "Major upgrade required: yargs-parser@11.1.1 \u2192 13.1.2. Review breaking changes before applying.",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-03",
+  "package": "sprintf-js",
+  "current": "1.0.3",
+  "target": null,
+  "direct": false,
+  "via": "react-scripts@3.4.1 > eslint@6.8.0 > js-yaml@3.15.2 > argparse@1.0.10 > sprintf-js@1.0.3",
+  "risk_removed": 10.8,
+  "vulns": [
+   "CVE-2026-97058"
+  ],
+  "order": 56,
+  "action": "No fixed version published \u2014 replace the package or apply a mitigation",
+  "tier": "ESCALATE"
+ },
+ {
+  "project": "app-02",
+  "package": "passport",
+  "current": "0.4.0",
+  "target": "0.6.0",
+  "direct": true,
+  "via": "passport@0.4.0",
+  "risk_removed": 10.0,
+  "vulns": [
+   "CVE-2022-25896"
+  ],
+  "order": 57,
+  "action": "npm install passport@0.6.0",
+  "tier": "AUTO"
+ },
+ {
+  "project": "app-03",
+  "package": "@babel/core",
+  "current": "7.9.0",
+  "target": "7.29.6",
+  "direct": false,
+  "via": "react-scripts@3.4.1 > @babel/core@7.9.0",
+  "risk_removed": 6.4,
+  "vulns": [
+   "CVE-2026-49356"
+  ],
+  "order": 58,
+  "action": "Upgrade the parent package, or add overrides: {\"@babel/core\": \"7.29.6\"}",
+  "tier": "AUTO"
+ }
+]

@@ -1,0 +1,11 @@
+{
+  "name": "app-03",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "0.21.1",
+    "handlebars": "4.7.6",
+    "lodash": "4.17.15",
+    "marked": "0.7.0",
+    "react-scripts": "3.4.1"
+  }
+}

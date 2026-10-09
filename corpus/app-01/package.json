@@ -1,0 +1,11 @@
+{
+  "name": "app-01",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "0.21.1",
+    "ejs": "3.0.1",
+    "lodash": "4.17.15",
+    "moment": "2.29.1",
+    "sequelize": "5.21.0"
+  }
+}
