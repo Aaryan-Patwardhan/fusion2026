@@ -28,25 +28,36 @@ router = APIRouter()
 FINDINGS_FILE   = Path("findings.json")
 PATCH_PLAN_FILE = Path("patch_plan.json")
 
+_FINDINGS_CACHE: dict = {"mtime": 0.0, "data": []}
+_PLAN_CACHE: dict = {"mtime": 0.0, "data": []}
+
 
 def _rows() -> list[dict]:
-    """Read and return finding rows from the persisted findings.json file."""
+    """Read and return finding rows from findings.json, cached in memory by file mtime."""
     if not FINDINGS_FILE.exists():
         raise HTTPException(
             status_code=503,
             detail="findings.json not found. Run the scan pipeline first.",
         )
-    return json.loads(FINDINGS_FILE.read_text())
+    mtime = FINDINGS_FILE.stat().st_mtime
+    if _FINDINGS_CACHE["mtime"] != mtime or not _FINDINGS_CACHE["data"]:
+        _FINDINGS_CACHE["mtime"] = mtime
+        _FINDINGS_CACHE["data"] = json.loads(FINDINGS_FILE.read_text())
+    return _FINDINGS_CACHE["data"]
 
 
 def _plan() -> list[dict]:
-    """Read and return patch plan rows from the persisted patch_plan.json file."""
+    """Read and return patch plan rows from patch_plan.json, cached in memory by file mtime."""
     if not PATCH_PLAN_FILE.exists():
         raise HTTPException(
             status_code=503,
             detail="patch_plan.json not found. Run the scan pipeline first.",
         )
-    return json.loads(PATCH_PLAN_FILE.read_text())
+    mtime = PATCH_PLAN_FILE.stat().st_mtime
+    if _PLAN_CACHE["mtime"] != mtime or not _PLAN_CACHE["data"]:
+        _PLAN_CACHE["mtime"] = mtime
+        _PLAN_CACHE["data"] = json.loads(PATCH_PLAN_FILE.read_text())
+    return _PLAN_CACHE["data"]
 
 
 @router.get("/patch")

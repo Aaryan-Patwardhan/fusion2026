@@ -25,16 +25,21 @@ from fastapi import APIRouter, HTTPException
 router = APIRouter()
 
 FINDINGS_FILE = Path("findings.json")
+_FINDINGS_CACHE: dict = {"mtime": 0.0, "data": []}
 
 
 def _rows() -> list[dict]:
-    """Read and return finding rows from the persisted findings.json file."""
+    """Read and return finding rows from findings.json, cached in memory by file mtime."""
     if not FINDINGS_FILE.exists():
         raise HTTPException(
             status_code=503,
             detail="findings.json not found. Run the scan pipeline first.",
         )
-    return json.loads(FINDINGS_FILE.read_text())
+    mtime = FINDINGS_FILE.stat().st_mtime
+    if _FINDINGS_CACHE["mtime"] != mtime or not _FINDINGS_CACHE["data"]:
+        _FINDINGS_CACHE["mtime"] = mtime
+        _FINDINGS_CACHE["data"] = json.loads(FINDINGS_FILE.read_text())
+    return _FINDINGS_CACHE["data"]
 
 
 @router.get("/summary")
